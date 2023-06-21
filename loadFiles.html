@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--cdn archives XLSX/Axios-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <!--web icon-->
+    <link rel="stylesheet" href="">
+
+    <!--styles-->
+    <link rel="stylesheet" href="./style/normalize.css">
+    <link rel="stylesheet" href="./style/header.css">
+    <link rel="stylesheet" href="./style/body.css">
+    <link rel="stylesheet" href="./style/footer.css">
+
+    <title>User file</title>
+</head>
+<body>
+    
+    <div class="header">
+        <img class="logo" src="./assets/isologo-criteria-smart-catalogs.svg" alt="Criteria logo" title="Criteria logo">
+
+        <div>
+            <a href="./perfil.html"><img class="perfil" src="./assets/perfil.png" alt="perfil"></a>
+        </div>
+    </div>
+    
+    <div class="body-section">
+        <div class="info-section">
+            <h4 class="general-title">Carga de productos</h4>
+
+            <h4 class="list-title">Tipo de archivo soportado:</h4>
+                <div class="data-needed">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>• XLSX</td>
+                            </tr>
+                            <tr>
+                                <td>• XLS</td>
+                            </tr>
+                            <tr>
+                                <td>• CSV</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="body-section">
+                    <div class="info-section">
+                        <h4 class="general-title">Carga de productos</h4>
+                        <p>Area de carga de productos para proveedores</p>
+                        <p>A continuacion se encuentra ejemplo de como debe estar el xlsx, junto a un xlsx listo para completar</p>
+                    </div>
+                    
+                    <div class="xlsx">
+                        <a href="./testXLSX.xlsx" download><button>xlsx de ejemplo</button></a>
+                        <a href="./testXLSX.xlsx" download><button>xlsx para completar</button></a>
+                    </div>
+                </div>
+        </div>
+
+        <div class="function-section">
+            <div input-section>
+                <input class="input-class" type="file" id="input" accept=".xlsx, .xls, .csv">
+            </div>
+            <div class="btn-section">
+                <button id="btn" class="btn">Enviar archivo</button>
+            </div>
+        </div>
+
+        <div class="uploaded-products" id="product-table">
+            <table>
+                <caption>Productos a enviar</caption>
+                <thead>
+                    <tr><!--title-->
+                        <th><!-- Blank corner --></th>
+                        <th></th>
+                        <th></th>
+                    <tr>
+                </thead>
+                <tbody><!--products-->
+                </tbody>
+            </table>
+            <!--llenar con el xlsx convertido en json como tabla-->
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="div-from-footer">
+            <a href="https://criteria.online/" target="_blank">
+                <img class="footer-logo-criteria" src="./assets/criteria-iso-blanco.svg" alt="criteria logo blanco" title="criteria logo">
+            </a>
+        </div>
+        <div class="div-from-footer">
+            <p class="title-footer">Contacto</p>
+            <p class="contact-celphone">+54 911 6714 3658</p>
+            <a href = "mailto:mcutini@criteria.online">mcutini@criteria.online</a>
+            <p class="contact-celphone">+54 223 6049176</p>
+            <a href = "mailto:emarte@criteria.online">emarte@criteria.online</a>
+        </div>
+        <div class="div-from-footer">
+            <p class="title-footer">En redes</p>
+            <a href="https://www.linkedin.com/company/criteria-dam-workflow-solutions">
+                <img class="footer-reds-logos" src="./assets/icons8-linkedin-rodeado-de-círculo-100.png" alt="linkedin logo" title="linkedin logo">
+            </a>
+            <a href="https://www.instagram.com/marcelocutini/">
+                <img class="footer-reds-logos" src="./assets/icons8-instagram-100.png" alt="insgragram logo" title="instagram logo">
+            </a>
+            <a href="https://www.youtube.com/channel/UCl6EB9QWjh0uwSeC_tBLq2w">
+                <img class="footer-reds-logos" src="./assets/icons8-youtube-100.png" alt="youtube logo" title="youtube logo">
+            </a>
+        </div>
+    </div>
+
+    <script src="./functions/convertFile.js"></script>-->
+</body>
+</html>

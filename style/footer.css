@@ -1,0 +1,48 @@
+.footer{
+    border-top: 1px solid rgb(255,203,112);
+    background-color: rgb(51,167,181);
+    width: 100%;
+    height: auto;
+    display: inline-flex;
+    justify-content: space-evenly;
+    color: white;
+}
+.footer > .div-from-footer > a{
+    text-decoration: none;
+    color: white;
+    font-style:oblique;
+}
+.div-from-footer > .contact-celphone{
+    font-size: 14.5px;
+}
+.uploaded-products{
+    display: none;
+    margin-bottom: 45px;
+}
+.footer > div > a{
+    text-decoration: none;
+    width: 100%;
+    height: auto;
+}
+.footer > div > a > .footer-logo-criteria{
+    padding: 35px;
+    height:80px;
+}
+.footer > div > a > .footer-logo{
+    padding: 35px;
+    height: 80px;
+}
+.footer > div > .title-footer{
+    padding-top:18px;
+    font-weight: bold;
+}
+.footer-reds-logos{
+    padding-top:15px;
+    width: 30px;
+    height: 30px;
+}
+.footer > .div-from-footer > a > .footer-reds-logos:hover{
+    background-color:  rgb(255,203,112);
+    padding: 0.1px;
+    border-radius: 100%;
+}

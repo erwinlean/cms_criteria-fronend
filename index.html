@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--cdn archives Axios-->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <title>Portal</title>
+
+    <link rel="stylesheet" href="./style/normalize.css">
+    <link rel="stylesheet" href="./style/header-index.css">
+    <link rel="stylesheet" href="./style/body.css">
+    <link rel="stylesheet" href="./style/footer.css">
+</head>
+<body>
+    <div class="index">
+        <div id="formulario-sign-in" id="register_form">
+            <div class="form-container">
+                <div>
+                    <h3>Sign in</h3>
+                </div>
+                <form id="register_form">
+                    <label for="name">Nombre</label>
+                    <input type="text" name="name">
+                
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido">
+                
+                    <label for="email">Email</label>
+                    <input type="text" name="email">
+                
+                    <label for="password">Password</label>
+                    <input type="password" name="password">
+                
+                    <label for="empresa">Empresa</label>
+                    <input type="text" name="empresa">
+                
+                    <input type="submit" value="Registrarse">
+                </form>
+            </div>
+        
+            <div>
+                <p>Si tenes cuenta</p>
+                <button id="login">Login</button>
+            </div>
+        </div>
+
+        <div id="formulario-login" style="display: none;">
+            <div class="form-container">
+                <div>
+                    <h3>Login</h3>
+                </div>
+                <form id="login_form">
+                    <label for="email">Email</label>
+                    <input type="text" name="email">
+                
+                    <label for="password">Password</label>
+                    <input type="password" name="password">
+                
+                    <input type="submit" value="Entrar">
+                </form>
+            </div>
+        
+            <div>
+                <p>Si no tenes cuenta</p>
+                <button id="sign_in">Registrate</button>
+            </div>
+        </div>
+
+        <div class="imagen-index">
+            <img class="logo" src="./assets/isologo-criteria-smart-catalogs.svg" alt="Criteria logo" title="Criteria logo">
+        </div>
+    </div>
+    
+    <div class="footer">
+        <div class="div-from-footer">
+            <a href="https://criteria.online/" target="_blank">
+                <img class="footer-logo-criteria" src="./assets/criteria-iso-blanco.svg" alt="criteria logo blanco" title="criteria logo">
+            </a>
+        </div>
+        <div class="div-from-footer">
+            <p class="title-footer">Contacto</p>
+            <p class="contact-celphone">+54 911 6714 3658</p>
+            <a href = "mailto:mcutini@criteria.online">mcutini@criteria.online</a>
+            <p class="contact-celphone">+54 223 6049176</p>
+            <a href = "mailto:emarte@criteria.online">emarte@criteria.online</a>
+        </div>
+        <div class="div-from-footer">
+            <p class="title-footer">En redes</p>
+            <a href="https://www.linkedin.com/company/criteria-dam-workflow-solutions">
+                <img class="footer-reds-logos" src="./assets/icons8-linkedin-rodeado-de-círculo-100.png" alt="linkedin logo" title="linkedin logo">
+            </a>
+            <a href="https://www.instagram.com/marcelocutini/">
+                <img class="footer-reds-logos" src="./assets/icons8-instagram-100.png" alt="insgragram logo" title="instagram logo">
+            </a>
+            <a href="https://www.youtube.com/channel/UCl6EB9QWjh0uwSeC_tBLq2w">
+                <img class="footer-reds-logos" src="./assets/icons8-youtube-100.png" alt="youtube logo" title="youtube logo">
+            </a>
+        </div>
+    </div>
+
+    <script src="./functions/login.js"></script>
+</body>
+</html>

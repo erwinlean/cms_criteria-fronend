@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--cdn archives XLSX/Axios-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+
+    <!--web icon-->
+    <link rel="stylesheet" href="">
+
+    <!--styles-->
+    <link rel="stylesheet" href="./style/normalize.css">
+    <link rel="stylesheet" href="./style/header.css">
+    <link rel="stylesheet" href="./style/body.css">
+    <link rel="stylesheet" href="./style/footer.css">
+
+    <title>User file</title>
+</head>
+<body>
+    
+    <div class="header">
+        <img class="logo" src="./assets/isologo-criteria-smart-catalogs.svg" alt="Criteria logo" title="Criteria logo">
+
+        <div>
+            <a href="./loadFiles.html"><img class="perfil" src="./assets/home.png" alt="perfil"></a>
+            <a href="./perfil.html"><img class="perfil" src="./assets/perfil.png" alt="perfil"></a>
+        </div>
+    </div>
+
+    <div class="body-section">
+        <form id="user_information">
+            <label for="name">Nombre</label>
+            <input type="text" name="name">
+                    
+            <label for="apellido">Apellido</label>
+            <input type="text" name="apellido">
+                    
+            <label for="email">Email</label>
+            <input type="text" name="email">
+                    
+            <label for="password">Password actual</label>
+            <input type="password" name="password">
+            <label for="new-password">Cambiar password</label>
+            <input type="password" name="new-password">
+            <label for="re-enter_new_password">Vuelva a ingresar el nuevo password</label>
+            <input type="password" name="re-enter_new_password">
+                    
+            <label for="empresa">Empresa</label>
+            <input type="text" name="empresa">
+                    
+            <input type="submit" value="Guardar">
+        </form>
+    </div>
+
+    <div class="footer">
+        <div class="div-from-footer">
+            <a href="https://criteria.online/" target="_blank">
+                <img class="footer-logo-criteria" src="./assets/criteria-iso-blanco.svg" alt="criteria logo blanco" title="criteria logo">
+            </a>
+        </div>
+        <div class="div-from-footer">
+            <p class="title-footer">Contacto</p>
+            <p class="contact-celphone">+54 911 6714 3658</p>
+            <a href = "mailto:mcutini@criteria.online">mcutini@criteria.online</a>
+            <p class="contact-celphone">+54 223 6049176</p>
+            <a href = "mailto:emarte@criteria.online">emarte@criteria.online</a>
+        </div>
+        <div class="div-from-footer">
+            <p class="title-footer">En redes</p>
+            <a href="https://www.linkedin.com/company/criteria-dam-workflow-solutions">
+                <img class="footer-reds-logos" src="./assets/icons8-linkedin-rodeado-de-círculo-100.png" alt="linkedin logo" title="linkedin logo">
+            </a>
+            <a href="https://www.instagram.com/marcelocutini/">
+                <img class="footer-reds-logos" src="./assets/icons8-instagram-100.png" alt="insgragram logo" title="instagram logo">
+            </a>
+            <a href="https://www.youtube.com/channel/UCl6EB9QWjh0uwSeC_tBLq2w">
+                <img class="footer-reds-logos" src="./assets/icons8-youtube-100.png" alt="youtube logo" title="youtube logo">
+            </a>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,208 @@
+html, body{
+    overflow-x: hidden;
+    color: black;
+}
+.body-section{
+    background-color: #f7f8f9;
+    display: grid;
+    padding: 45px 15px 15px 15px;
+    justify-items: center;
+    height: auto;
+    width: fit-content;
+    min-height: 450px;
+}
+.body-section > .info-section .general-title{
+    color:#0366d6;
+    font-size: 20px;
+    text-align: center;
+    vertical-align: middle;
+}
+.select{
+    text-align: center;
+    vertical-align: middle;
+    margin: 35px;
+    background-color: white;
+    border-radius: 5px;
+    padding: 8px;
+}
+.select > select{
+    background-color: #f7f8f9;
+    border-radius: 5px;
+    padding: 8px;
+    border: 1px solid rgb(51,167,181);
+}
+h4{
+    text-align: center;
+}
+.data-needed{
+    text-align: -webkit-center;
+    vertical-align: middle;
+}
+.data-needed > table{
+    border-collapse: unset;
+    border: solid 2px  rgb(51,167,181);
+    font-size: 14px;
+    padding: 8px;
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+.data-needed > table > tbody > tr > td{
+    border: none;
+    text-align: justify;
+}
+.body-section > .function-section{
+    display: inline-flex;
+    padding: 35px 0 35px 0;
+}
+input[type=file]::file-selector-button{
+    cursor: pointer;
+    background-color: rgb(255,203,112);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    border-color: rgb(51,167,181);
+}
+input[type=file]::file-selector-button:hover{
+    background-color: rgb(51,167,181);
+}
+.input-class{
+    padding-right: 35px;
+}
+.btn-section > .btn{
+    cursor: pointer;
+    background-color: rgb(255,203,112);
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px;
+    border-color: rgb(51,167,181);
+}
+.btn-section > .btn:hover{
+    background-color: rgb(51,167,181);
+}
+caption{
+    margin:10px;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: left;
+    text-align: center;
+}
+table{
+    border-collapse: collapse;
+    border: solid 2px black;
+    border-radius: 5px;
+    background-color: white;
+    padding: 16px;
+    text-align: center;
+	vertical-align: middle;
+}
+thead {
+	background-color: rgb(255,203,112);
+	color: black;
+	font-size: 0.875rem;
+	text-transform: uppercase;
+	letter-spacing: 2px;
+}
+th, td {
+    padding: 10px;
+    border: 1px solid black;
+}
+/*xlsx btn*/
+.xlsx a button{
+    color: rgb(51,167,181);
+    border: 1px solid rgb(51,167,181);
+    padding: 10px;
+    border-radius: 8px;
+}
+.xlsx a button:hover {
+    filter: drop-shadow(0 0 3px rgb(255, 203, 112));
+}
+.xlsx a button:active {
+    box-shadow: 0 0 5px rgb(255, 203, 112);
+}
+/*forms*/
+#formulario-login{
+    min-height: 843.3px;
+}
+#formulario-login > div{
+    margin-top: 20%;
+    background-color: rgb(51,167,181);
+    width: fit-content;
+    padding: 50px;
+}
+#formulario-sign-in > div{
+    background-color: rgb(51,167,181);
+    width: fit-content;
+    padding: 50px;
+}
+.form-container > div{
+    display: grid;
+    justify-content: center;
+}
+h3{
+    margin-bottom: 50px;
+}
+form{
+    display: inline-grid;
+}
+label{
+    padding: 10px 0 10px 0;
+}
+input{
+    padding: 8px;
+    border-radius: 8px;
+}
+input[type=submit]{
+    margin-top: 30px;
+    padding: 12px;
+    font-weight: bold;
+}
+.perfil{
+    width: 90px;
+    padding-right: 30px;
+}
+/*login*/
+.index{
+    display: flex;
+    min-height: 600px;
+}
+.log-sign{
+    width: 40%;
+    background-color: white;
+}
+.imagen-index{
+    display: flex;
+    align-self: center;
+    width: 60%;
+    background-color: white;
+    min-height: 843.3px;
+    text-align: center;
+    justify-content: center;
+}
+.imagen-index img{
+    width: 90%;
+}
+.log-sign button {
+    margin-right: 10px;
+    border: 1px solid rgb(51, 167, 181);
+    padding: 10px;
+    border-radius: 8px;
+    color: rgb(51, 167, 181);
+    font-weight: 500;
+}
+.log-sign button:hover {
+    filter: drop-shadow(0 0 3px rgb(255, 203, 112));
+}
+.log-sign button:active {
+    box-shadow: 0 0 5px rgb(255, 203, 112);
+}
+#login{
+    padding: 10px;
+    border-radius: 8px;
+    color: black;
+    font-weight: 500;   
+}
+#sign_in{
+    padding: 10px;
+    border-radius: 8px;
+    color: black;
+    font-weight: 500;   
+}
