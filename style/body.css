@@ -8,7 +8,7 @@ html, body{
     padding: 45px 15px 15px 15px;
     justify-items: center;
     height: auto;
-    width: fit-content;
+    width: 100%;
     min-height: 450px;
 }
 .body-section > .info-section .general-title{
@@ -171,7 +171,7 @@ input[type=submit]{
 .imagen-index{
     display: flex;
     align-self: center;
-    width: 60%;
+    width: 100%;
     background-color: white;
     min-height: 843.3px;
     text-align: center;

@@ -26,8 +26,11 @@
         <img class="logo" src="./assets/isologo-criteria-smart-catalogs.svg" alt="Criteria logo" title="Criteria logo">
 
         <div>
-            <a href="./loadFiles.html"><img class="perfil" src="./assets/home.png" alt="perfil"></a>
+            <a href="./home.html"><img class="perfil" src="./assets/home.png" alt="perfil"></a>
             <a href="./perfil.html"><img class="perfil" src="./assets/perfil.png" alt="perfil"></a>
+            <div>
+                <button id="logOut">Cerrar sesion</button>
+            </div>
         </div>
     </div>
 
@@ -44,9 +47,9 @@
                     
             <label for="password">Password actual</label>
             <input type="password" name="password">
-            <label for="new-password">Cambiar password</label>
+            <label for="new-password">Nuevo password</label>
             <input type="password" name="new-password">
-            <label for="re-enter_new_password">Vuelva a ingresar el nuevo password</label>
+            <label for="re-enter_new_password">Confirmar nuevo password</label>
             <input type="password" name="re-enter_new_password">
                     
             <label for="empresa">Empresa</label>
@@ -82,5 +85,7 @@
             </a>
         </div>
     </div>
+
+    <script src="./functions/userDataHandler.js"></script>
 </body>
 </html>

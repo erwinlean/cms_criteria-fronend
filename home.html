@@ -18,12 +18,29 @@
     <link rel="stylesheet" href="./style/body.css">
     <link rel="stylesheet" href="./style/footer.css">
 
+    <script>
+        const token = localStorage.getItem('token');
+    
+        if (!token) {
+            window.location.href = 'index.html';
+        };
+    </script>
+    
+
     <title>User file</title>
 </head>
 <body>
     
     <div class="header">
         <img class="logo" src="./assets/isologo-criteria-smart-catalogs.svg" alt="Criteria logo" title="Criteria logo">
+        
+        <div>
+            <p>Bienvenido <span id="username"></span></p>
+        </div>
+
+        <div>
+            <button id="logOut">Cerrar sesion</button>
+        </div>
 
         <div>
             <a href="./perfil.html"><img class="perfil" src="./assets/perfil.png" alt="perfil"></a>
@@ -118,6 +135,7 @@
         </div>
     </div>
 
-    <script src="./functions/convertFile.js"></script>-->
+    <script src="./functions/convertFile.js"></script>
+    <script src="./functions/userDataHandler.js"></script>
 </body>
 </html>
