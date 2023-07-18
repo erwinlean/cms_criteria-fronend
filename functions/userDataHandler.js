@@ -2,6 +2,7 @@
 
 let user = JSON.parse(localStorage.getItem('user'));
 const url = "http://localhost:8080/api";
+//console.log(localStorage.getItem('token'));
 
 const logOutButton = document.querySelector("#logOut");
 const welcomeUser = document.getElementById('username');

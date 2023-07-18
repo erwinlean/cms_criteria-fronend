@@ -1,11 +1,18 @@
 html, body{
     overflow-x: hidden;
     color: black;
+    background-color: rgb(51, 167, 181);
+    display: contents;
+}
+body > div.body-section > div.info-section > div.body-section > div.info-section > p:nth-child(3){
+    width: 90%;
+}
+button{
+    cursor: pointer;
 }
 .body-section{
     background-color: #f7f8f9;
-    display: grid;
-    padding: 45px 15px 15px 15px;
+    display: flex;
     justify-items: center;
     height: auto;
     width: 100%;
@@ -16,6 +23,11 @@ html, body{
     font-size: 20px;
     text-align: center;
     vertical-align: middle;
+}
+.info-section{
+    display: grid;
+    width: -webkit-fill-available;
+    text-align-last: center;
 }
 .select{
     text-align: center;
@@ -50,8 +62,14 @@ h4{
     text-align: justify;
 }
 .body-section > .function-section{
-    display: inline-flex;
+    display: flex;
     padding: 35px 0 35px 0;
+    justify-content: center;
+}
+.function-section{
+    display: flex;
+    padding: 50px 0;
+    justify-content: center;
 }
 input[type=file]::file-selector-button{
     cursor: pointer;
@@ -118,6 +136,9 @@ th, td {
 .xlsx a button:active {
     box-shadow: 0 0 5px rgb(255, 203, 112);
 }
+.xlsx {
+    padding: 35px 0;
+}
 /*forms*/
 #formulario-login{
     min-height: 843.3px;
@@ -126,12 +147,12 @@ th, td {
     margin-top: 20%;
     background-color: rgb(51,167,181);
     width: fit-content;
-    padding: 50px;
+    padding: 0 50px;
 }
 #formulario-sign-in > div{
     background-color: rgb(51,167,181);
     width: fit-content;
-    padding: 50px;
+    padding: 0 50px;
 }
 .form-container > div{
     display: grid;
@@ -157,7 +178,6 @@ input[type=submit]{
 }
 .perfil{
     width: 90px;
-    padding-right: 30px;
 }
 /*login*/
 .index{
@@ -205,4 +225,9 @@ input[type=submit]{
     border-radius: 8px;
     color: black;
     font-weight: 500;   
+}
+#formulario-sign-in{
+    display: block;
+    max-height: 843.3px;
+    background-color: rgb(51, 167, 181);
 }

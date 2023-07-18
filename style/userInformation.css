@@ -1,0 +1,43 @@
+/* General */
+.user{
+    position: relative;
+    width: 80px;
+    display: block;
+    border-right: 1px solid rgb(255,203,112);
+}
+.user button{
+    border: none;
+    background-color: transparent;
+}
+.user img {
+    width: 60px;
+}
+
+/*Inc data*/
+.logins-info{
+    
+}
+li{
+    list-style: none;
+}
+
+/*not diplayed*/
+body > div.body-section > div.user > div.infor_pers > div.logins > div, body > div.body-section > div.user > div.infor_pers > div.files > div{
+    display: none;
+}
+body > div.body-section > div.user > div:nth-child(3) > button > img{
+    display: none;
+}
+
+/* Open icon*/
+body > div.body-section > div.user > div.open-left_section{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+}
+body > div.body-section > div.user > div.open-left_section > button{
+    padding: 0;
+    margin: 0;
+}

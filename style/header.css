@@ -10,3 +10,34 @@
 .header > .logo {
     height: 75px;
 }
+.header-icons{
+    height: 75px;
+    display: flex;
+    margin-right: 25px;
+    align-items: center;
+}
+body > div.header > div > a{
+    width: fit-content;
+}
+body > div.header > div > a > img{
+    display: flex;
+    align-items: center;
+    width: 50px;
+}
+#logOut{
+    border-style: none;
+    background-color: transparent;
+}
+#logOut > img{
+    cursor: pointer;
+    display: flex;
+    width: 40px;
+    align-items: center;
+}
+body > div.header > div:nth-child(2){
+    align-self: center;
+    font-weight: bold;
+}
+body > div.header > div.header-icons > a > img{
+    width: 45px;
+}
