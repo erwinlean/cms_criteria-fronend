@@ -12,17 +12,13 @@
 .user img {
     width: 60px;
 }
-
 /*Inc data*/
-.logins-info{
-    
-}
 li{
     list-style: none;
 }
 
 /*not diplayed*/
-body > div.body-section > div.user > div.infor_pers > div.logins > div, body > div.body-section > div.user > div.infor_pers > div.files > div{
+body > div.body-section > div.info-section > div.files-info, body > div.body-section > div.info-section > div.logins-info{
     display: none;
 }
 body > div.body-section > div.user > div:nth-child(3) > button > img{
@@ -40,4 +36,13 @@ body > div.body-section > div.user > div.open-left_section{
 body > div.body-section > div.user > div.open-left_section > button{
     padding: 0;
     margin: 0;
+}
+.upload{
+    padding: 10px 0;
+}
+.logins{
+    padding: 10px 0;
+}
+.files{
+    padding: 10px 0;
 }

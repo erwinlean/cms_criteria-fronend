@@ -45,32 +45,19 @@
         </div>
     </div>
     
-    <div class="body-section">
+    <div class="body-section"> <!-- Buscar otro icono, poner en el panel izquierdo, y que este sea el index, intercambiar el body segun el click-->
         <div class="user">
             <div class="infor_pers">
+                <div class="upload">
+                    <button><img src="./assets/upload.png" alt="upload icon" title="upload icon"></button>
+                </div>
+
                 <div class="logins">
                     <button><img src="./assets/logins.png" alt="logins icon" title="logins icon"></button>
-                    <div class="logins-info">
-                        <h5>Tus conexiones</h5>
-                        <ul id="loginDatesList"></ul>
-                    </div>
                 </div>
                 
                 <div class="files">
                     <button><img src="./assets/files.png" alt="Files icon" title="files icon"></button>
-                    <div class="files-info">
-                        <h5>Tus Archivos enviados</h5>
-                        <table id="filesTable">
-                            <thead>
-                                <tr id="tableHeaders">
-                                    <!-- headers -->
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- rows -->
-                            </tbody>
-                        </table>
-                    </div>
                 </div>
             </div>
 
@@ -83,62 +70,78 @@
         </div>
 
         <div class="info-section">
-            <h4 class="general-title">Carga de productos</h4>
+            <div class="files-info">
+                <h5>Tus Archivos enviados</h5>
+                <table id="filesTable">
+                    <thead>
+                        <tr id="tableHeaders">
+                            <!-- headers -->
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- rows -->
+                    </tbody>
+                </table>
+            </div>
 
-            <h4 class="list-title">Tipo de archivo soportado:</h4>
-                <div class="data-needed">
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>• XLSX</td>
-                            </tr>
-                            <tr>
-                                <td>• XLS</td>
-                            </tr>
-                            <tr>
-                                <td>• CSV</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
+            <div class="logins-info">
+                <h5>Tus conexiones</h5>
+                <ul id="loginDatesList"></ul>
+            </div>
 
-                <div class="container_info-section">
-                    <div class="info-section">
-                        <h4 class="general-title">Carga de productos</h4>
-                        <p>Area de carga de productos para proveedores</p>
-                        <p>A continuacion se encuentra ejemplo de como debe estar el xlsx, junto a un xlsx listo para completar</p>
-                    </div>
-                    
-                    <div class="xlsx">
-                        <a href="./testXLSX.xlsx" download><button>xlsx de ejemplo</button></a>
-                        <a href="./testXLSX.xlsx" download><button>xlsx para completar</button></a>
-                    </div>
-                </div>
+            <div id="upload-section">
+                <h4 class="general-title">Carga de productos</h4>
 
-                <div class="function-section">
-                    <div input-section>
-                        <input class="input-class" type="file" id="input" accept=".xlsx, .xls, .csv">
+                <h4 class="list-title">Tipo de archivo soportado:</h4>
+                    <div class="data-needed">
+                        <table>
+                            <tbody>
+                                <tr>
+                                    <td>• XLSX</td>
+                                </tr>
+                                <tr>
+                                    <td>• XLS</td>
+                                </tr>
+                                <tr>
+                                    <td>• CSV</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div class="btn-section">
-                        <button id="btn" class="btn">Enviar archivo</button>
+
+                    <div class="container_info-section">
+                        <div class="info-section">
+                            <h4 class="general-title">Carga de productos</h4>
+                            <p>Area de carga de productos para proveedores</p>
+                            <p>A continuacion se encuentra ejemplo de como debe estar el xlsx, junto a un xlsx listo para completar</p>
+                        </div>
+
+                        <div class="xlsx">
+                            <a href="./testXLSX.xlsx" download><button>xlsx de ejemplo</button></a>
+                            <a href="./testXLSX.xlsx" download><button>xlsx para completar</button></a>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="uploaded-products" id="product-table">
-                    <table>
-                        <caption>Productos a enviar</caption>
+
+                    <div class="function-section">
+                        <div input-section>
+                            <input class="input-class" type="file" id="input" accept=".xlsx, .xls, .csv">
+                        </div>
+                        <div class="btn-section">
+                            <button id="btn" class="btn">Enviar archivo</button>
+                        </div>
+                    </div>
+
+                    <table id="uploadedFilesTable" class="scrollable-table">
                         <thead>
-                            <tr><!--title-->
-                                <th><!-- Blank corner --></th>
-                                <th></th>
-                                <th></th>
-                            <tr>
+                            <tr id="productHeader">
+                                <!-- headers -->
+                            </tr>
                         </thead>
-                        <tbody><!--products-->
+                        <tbody>
+                            <!-- rows -->
                         </tbody>
                     </table>
-                    <!--llenar con el xlsx convertido en json como tabla-->
-                </div>
+            </div>
         </div>
     </div>
 

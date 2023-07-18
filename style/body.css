@@ -96,6 +96,9 @@ input[type=file]::file-selector-button:hover{
 .btn-section > .btn:hover{
     background-color: rgb(51,167,181);
 }
+input[type="submit"] {
+    cursor: pointer;
+}
 caption{
     margin:10px;
     font-weight: bold;
@@ -104,10 +107,9 @@ caption{
     text-align: center;
 }
 table{
+    display: inline-table !important;
     border-collapse: collapse;
-    border: solid 2px black;
     border-radius: 5px;
-    background-color: white;
     padding: 16px;
     text-align: center;
 	vertical-align: middle;
@@ -230,4 +232,16 @@ input[type=submit]{
     display: block;
     max-height: 843.3px;
     background-color: rgb(51, 167, 181);
+}
+
+/* table */
+.scrollable-table {
+    overflow: auto;
+    display: none;
+    margin: 25px;
+}
+body > div.body-section > div.info-section > div.files-info{
+    overflow: auto;
+    display: none;
+    margin: 25px;
 }
