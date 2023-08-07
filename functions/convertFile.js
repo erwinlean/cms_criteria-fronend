@@ -70,7 +70,6 @@ const convert_file_to_json = (event) => {
                     return obj;
                 });
 
-                console.log(file_traduced);
                 products = file_traduced;
 
                 displayProductsInTable(products);
@@ -125,16 +124,16 @@ async function sendFile () {
     const userEmail = user.email;
 
     console.log("Archivo enviado por: " + userEmail);
-    console.log(products)
 
     const fileData = {
         fileName: "test_file",
         brand: "pepito",
-        data: products,
+        data: transformData(products),
         userUpload: userEmail,
     };
-
-    console.log(fileData)
+    
+    console.log(typeof(fileData));
+    console.log(fileData);
 
     // Comented hasta que funcione la limpieza del xlsx
     try {
