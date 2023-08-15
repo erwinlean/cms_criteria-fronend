@@ -1,0 +1,9 @@
+input{
+    border: 1px solid rgb(51,167,181);
+}
+input:focus{
+    filter: drop-shadow(0 0 3px white);
+}
+#user_information > input[type=submit]:nth-child(15):hover{
+    filter: drop-shadow(0 0 3px grey);
+}

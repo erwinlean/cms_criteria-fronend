@@ -33,40 +33,42 @@
 <body>
     
     <div class="header">
-        <img class="logo" src="./assets/isologo-criteria-smart-catalogs.svg" alt="Criteria logo" title="Criteria logo">
+        <img class="logo" src="./assets/isologo-criteria-smart-catalogs.svg" alt="Criteria logo" title="Criteria">
         
         <div>
             <p>Bienvenido <span id="username"></span></p>
         </div>
 
         <div class="header-icons">
-            <a href="./perfil.html"><img class="perfil" src="./assets/user.png" alt="perfil"></a>
-            <button id="logOut"><img src="./assets/logout.png" alt="Log out"></button>
+            <a href="./perfil.html"><img class="perfil" src="./assets/user.png" alt="perfil" title="Perfil"></a>
+            <button id="logOut"><img src="./assets/logout.png" alt="Log out" title="Logout"></button>
         </div>
     </div>
     
-    <div class="body-section"> <!-- Buscar otro icono, poner en el panel izquierdo, y que este sea el index, intercambiar el body segun el click-->
+    <div class="body-section">
         <div class="user">
             <div class="infor_pers">
                 <div class="upload">
-                    <button><img src="./assets/upload.png" alt="upload icon" title="upload icon"></button>
+                    <button><img src="./assets/upload.png" alt="upload icon" title="Upload"></button>
                 </div>
 
                 <div class="logins">
-                    <button><img src="./assets/logins.png" alt="logins icon" title="logins icon"></button>
+                    <button><img src="./assets/logins.png" alt="logins icon" title="Logins"></button>
                 </div>
                 
                 <div class="files">
-                    <button><img src="./assets/files.png" alt="Files icon" title="files icon"></button>
+                    <button><img src="./assets/files.png" alt="Files icon" title="Files"></button>
+                </div>
+
+                <div class="create-user">
+                    <button><img src="./assets/unlarge.png" alt="Create user icon" title="Create user"></button>
+                </div>
+
+                <div class="search-products">
+                    <button><img src="./assets/enlarge.png" alt="Product Search icon" title="Product Search"></button>
                 </div>
             </div>
 
-            <div class="open-left_section">
-                <button><img src="./assets/enlarge.png" alt="open section"></button>
-            </div>
-            <div class="open-left_section">
-                <button><img src="./assets/unlarge.png" alt="open section"></button>
-            </div>
         </div>
 
         <div class="info-section">
@@ -117,8 +119,8 @@
                         </div>
 
                         <div class="xlsx">
-                            <a href="./testXLSX.xlsx" download><button>xlsx de ejemplo</button></a>
-                            <a href="./testXLSX.xlsx" download><button>xlsx para completar</button></a>
+                            <a href="./example.xlsx" download><button>xlsx de ejemplo</button></a>
+                            <a href="./errorExample.xlsx" download><button>xlsx para completar</button></a>
                         </div>
                     </div>
 
@@ -142,13 +144,53 @@
                         </tbody>
                     </table>
             </div>
+
+            <!-- Create user-->
+            <div id="formulario-sign-in" id="register_form">
+                <div class="form-container">
+                    <div>
+                        <h3>Sign in</h3>
+                    </div>
+                    <form id="register_form">
+                        <label for="name">Nombre</label>
+                        <input type="text" name="name">
+                    
+                        <label for="apellido">Apellido</label>
+                        <input type="text" name="apellido">
+                    
+                        <label for="email">Email</label>
+                        <input type="text" name="email">
+                    
+                        <label for="password">Password</label>
+                        <input type="password" name="password">
+                        <label for="re-enter_password">Confirmar Password</label>
+                        <input type="password" name="re-enter_password">
+                    
+                        <label for="empresa">Empresa</label>
+                        <input type="text" name="empresa">
+                        <label for="rol">Rol</label>
+                        <select multiple name="rol">
+                            <option value="admin">Admin</option>
+                            <option value="provider">Proveedor</option>
+                            <option value="consumer">Consumidor</option>
+                        </select>
+                    
+                        <input type="submit" value="Registrar">
+                    </form>
+                </div>
+            </div>
+
+            <div class="products-by-sku">
+                <label for="search">Buscar Producto</label>
+                <input name="search" type="search" placeholder="Ingrese sku">
+            </div>
         </div>
     </div>
 
     <div class="footer">
         <div class="div-from-footer">
             <a href="https://criteria.online/" target="_blank">
-                <img class="footer-logo-criteria" src="./assets/criteria-iso-blanco.svg" alt="criteria logo blanco" title="criteria logo">
+                <img class="footer-logo-criteria" src="./assets/criteria-iso-blanco.svg" alt="criteria logo blanco" title="criteria">
             </a>
         </div>
         <div class="div-from-footer">
@@ -161,20 +203,20 @@
         <div class="div-from-footer">
             <p class="title-footer">En redes</p>
             <a href="https://www.linkedin.com/company/criteria-dam-workflow-solutions">
-                <img class="footer-reds-logos" src="./assets/icons8-linkedin-rodeado-de-círculo-100.png" alt="linkedin logo" title="linkedin logo">
+                <img class="footer-reds-logos" src="./assets/icons8-linkedin-rodeado-de-círculo-100.png" alt="linkedin logo" title="linkedin">
             </a>
             <a href="https://www.instagram.com/marcelocutini/">
-                <img class="footer-reds-logos" src="./assets/icons8-instagram-100.png" alt="insgragram logo" title="instagram logo">
+                <img class="footer-reds-logos" src="./assets/icons8-instagram-100.png" alt="insgragram logo" title="instagram">
             </a>
             <a href="https://www.youtube.com/channel/UCl6EB9QWjh0uwSeC_tBLq2w">
-                <img class="footer-reds-logos" src="./assets/icons8-youtube-100.png" alt="youtube logo" title="youtube logo">
+                <img class="footer-reds-logos" src="./assets/icons8-youtube-100.png" alt="youtube logo" title="youtube">
             </a>
         </div>
     </div>
 
-    <script src="./functions/schemaFila.js"></script>
-    <script src="./functions/convertFile.js"></script>
-    <script src="./functions/userDataHandler.js"></script>
-    <script src="./functions/leftSection.js"></script>
+    <script type="module" src="./functions/fileMannagment/main.js"></script>
+    <script type="module" src="./functions/userMannagment/main.js"></script>
+    <script src="./functions/userMannagment/createUser.js"></script>
+    <script type="module" src="./functions/uiMannagment/main.js"></script>
 </body>
 </html>

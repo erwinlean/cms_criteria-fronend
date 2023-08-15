@@ -1,6 +1,6 @@
 "use strict";
 
-function transformData(jsonData) {
+export function transformData(jsonData) {
     const transformedData = [];
 
     // forEach json need to be converted to the dataToBackend schema

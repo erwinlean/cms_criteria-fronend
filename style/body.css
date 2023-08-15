@@ -135,10 +135,10 @@ th, td {
     border-radius: 8px;
 }
 .xlsx a button:hover {
-    filter: drop-shadow(0 0 3px rgb(255, 203, 112));
+    filter: drop-shadow(0 0 5px rgb(51,167,181));
 }
 .xlsx a button:active {
-    box-shadow: 0 0 5px rgb(255, 203, 112);
+    box-shadow: 0 0 5px rgb(51,167,181);
 }
 .xlsx {
     padding: 35px 0;
@@ -146,12 +146,13 @@ th, td {
 /*forms*/
 #formulario-login{
     min-height: 843.3px;
+    display: flex;
 }
 #formulario-login > div{
     margin-top: 20%;
     background-color: rgb(51,167,181);
     width: fit-content;
-    padding: 0 50px;
+    padding: 100px 40px 0px 40px;
 }
 #formulario-sign-in > div{
     background-color: rgb(51,167,181);
@@ -174,11 +175,27 @@ label{
 input{
     padding: 8px;
     border-radius: 8px;
+    border: 1px solid white;
+}
+input:focus{
+    border-color: rgb(51,167,181); /* Cambia el color del borde */
+    box-shadow: 0 0 5px rgb(51,167,181); /* Agrega una sombra alrededor del input */
+    outline: none;
+}
+#login_form > input[type=text]:nth-child(2):focus{
+    filter: drop-shadow(0 0 3px white);
+}
+#login_form > input[type=password]:nth-child(4):focus{
+    filter: drop-shadow(0 0 3px white);
 }
 input[type=submit]{
     margin-top: 30px;
     padding: 12px;
     font-weight: bold;
+}
+input[type=submit]:hover{
+    filter: drop-shadow(0 0 5px white);
+    border-color: rgb(51,167,181)
 }
 .perfil{
     width: 90px;
@@ -204,36 +221,15 @@ input[type=submit]{
 .imagen-index img{
     width: 90%;
 }
-.log-sign button {
-    margin-right: 10px;
-    border: 1px solid rgb(51, 167, 181);
-    padding: 10px;
-    border-radius: 8px;
-    color: rgb(51, 167, 181);
-    font-weight: 500;
-}
-.log-sign button:hover {
-    filter: drop-shadow(0 0 3px rgb(255, 203, 112));
-}
-.log-sign button:active {
-    box-shadow: 0 0 5px rgb(255, 203, 112);
-}
-#login{
-    padding: 10px;
-    border-radius: 8px;
-    color: black;
-    font-weight: 500;   
-}
-#sign_in{
-    padding: 10px;
-    border-radius: 8px;
-    color: black;
-    font-weight: 500;   
-}
 #formulario-sign-in{
-    display: block;
+    display: none;
     max-height: 843.3px;
-    background-color: rgb(51, 167, 181);
+    background-color: white;
+}
+
+/*Search products*/
+body > div.body-section > div.info-section > div.products-by-sku{
+    display: none;
 }
 
 /* table */
