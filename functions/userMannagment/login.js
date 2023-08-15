@@ -22,6 +22,7 @@ loginForm.addEventListener('submit', function(event) {
 
     axios.post(`${url}/users/login`, data)
     .then(res => {
+        console.log(res)
         const token = res.data.token;
         const user = res.data.user;
 

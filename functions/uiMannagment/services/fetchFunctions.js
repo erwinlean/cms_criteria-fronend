@@ -1,10 +1,18 @@
-import { getCurrentUserEmail } from "./data.js";
+"use strict";
 
-export const fetchUserFiles = async (url, token) => {
-    const currentUserEmail = getCurrentUserEmail();
+import { loginsDisplay, filesDisplay } from "./dataDisplay.js";
+
+const currentUser = JSON.parse(localStorage.getItem("user"));
+const currentUserEmail = currentUser.email;
+
+const url = "http://localhost:8080/api";
+const token = localStorage.getItem("token");
+
+export const fetchUserFiles = async () => {
+    const currentUserEmail = currentUser.email;
 
     try {
-        const response = await fetch(`${url}/users/userFiles`, {
+        const response = await fetch(`${url}/files`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -14,7 +22,10 @@ export const fetchUserFiles = async (url, token) => {
         });
 
         if (response.ok) {
-            return await response.json();
+            const data =  await response.json();
+            const res = filesDisplay(data)
+
+            return res
         } else {
             const receivedInfo = await response.json();
             console.log("Error while fetching user files:", receivedInfo);
@@ -24,8 +35,7 @@ export const fetchUserFiles = async (url, token) => {
     };
 };
 
-export const fetchUserLogins = async (url, token) => {
-    const currentUserEmail = getCurrentUserEmail();
+export const fetchUserLogins = async () => {
 
     try {
         const response = await fetch(`${url}/users/userLogins`, {
@@ -38,7 +48,10 @@ export const fetchUserLogins = async (url, token) => {
         });
 
         if (response.ok) {
-            return await response.json();
+            const data =  await response.json();
+            const res = loginsDisplay(data);
+
+            return res;
         } else {
             const receivedInfo = await response.json();
             console.log("Error while fetching user logins:", receivedInfo);

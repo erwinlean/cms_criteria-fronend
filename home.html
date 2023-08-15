@@ -71,13 +71,17 @@
 
         </div>
 
-        <div class="info-section">
+        <div class="info-section"> <!--files from backend (data)-->
             <div class="files-info">
                 <h5>Tus Archivos enviados</h5>
                 <table id="filesTable">
                     <thead>
-                        <tr id="tableHeaders">
-                            <!-- headers -->
+                        <tr>
+                            <th>Nombre de Archivo</th>
+                            <th>Marca</th>
+                            <th>Fecha de Subida</th>
+                            <th>Usuario de Subida</th>
+                            <th>Informacion del archivo</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -86,7 +90,7 @@
                 </table>
             </div>
 
-            <div class="logins-info">
+            <div class="logins-info"> <!-- logins from backend (data)-->
                 <h5>Tus conexiones</h5>
                 <ul id="loginDatesList"></ul>
             </div>
@@ -180,7 +184,7 @@
                 </div>
             </div>
 
-            <div class="products-by-sku">
+            <div class="products-by-sku"> <!--no functions for this yet-->
                 <label for="search">Buscar Producto</label>
                 <input name="search" type="search" placeholder="Ingrese sku">
             </div>
@@ -214,9 +218,9 @@
         </div>
     </div>
 
-    <script type="module" src="./functions/fileMannagment/main.js"></script>
     <script type="module" src="./functions/userMannagment/main.js"></script>
-    <script src="./functions/userMannagment/createUser.js"></script>
+    <script type="module" src="./functions/fileMannagment/main.js"></script>
     <script type="module" src="./functions/uiMannagment/main.js"></script>
+    <script src="./functions/userMannagment/createUser.js"></script>
 </body>
 </html>

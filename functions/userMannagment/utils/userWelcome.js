@@ -1,9 +1,9 @@
 "use strict";
 
-import {user} from "./userData.js";
-
 export function welcomeUser() {
-    const welcomeUser = document.getElementById('username');
+
+    const welcomeUser = document.querySelector("#username");
+    const user = JSON.parse(localStorage.getItem("user"));
 
     if(welcomeUser){
         return welcomeUser.textContent = user.name;
