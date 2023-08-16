@@ -39,10 +39,12 @@ registerForm.addEventListener('submit', function(event) {
             
             const token = res.data.token;
             const user = res.data.user;
+            const tokenExpiration = new Date().getTime() + 2 * 60 * 60 * 1000;
     
             localStorage.setItem('token', token);
-            localStorage.setItem('user', JSON.stringify(user));
-            window.location.href = 'home.html';
+            localStorage.setItem('tokenExpiration', tokenExpiration);
+            //localStorage.setItem('user', JSON.stringify(user));
+            //window.location.href = 'home.html';
             
             registerForm.reset();
         })

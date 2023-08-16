@@ -32,6 +32,7 @@
 </head>
 <body>
     
+    <!--Header-->
     <div class="header">
         <img class="logo" src="./assets/isologo-criteria-smart-catalogs.svg" alt="Criteria logo" title="Criteria">
         
@@ -47,6 +48,8 @@
     
     <div class="body-section">
         <div class="user">
+
+            <!--Left section icons-->
             <div class="infor_pers">
                 <div class="upload">
                     <button><img src="./assets/upload.png" alt="upload icon" title="Upload"></button>
@@ -71,7 +74,8 @@
 
         </div>
 
-        <div class="info-section"> <!--files from backend (data)-->
+        <!--files from backend (data)-->
+        <div class="info-section"> 
             <div class="files-info">
                 <h5>Tus Archivos enviados</h5>
                 <table id="filesTable">
@@ -90,11 +94,13 @@
                 </table>
             </div>
 
-            <div class="logins-info"> <!-- logins from backend (data)-->
-                <h5>Tus conexiones</h5>
+            <!-- logins from backend (data)-->
+            <div class="logins-info"> 
+                <h5>Conexiones:</h5>
                 <ul id="loginDatesList"></ul>
             </div>
 
+            <!-- Load and process xlsx/csv data-->
             <div id="upload-section">
                 <h4 class="general-title">Carga de productos</h4>
 
@@ -153,40 +159,53 @@
             <div id="formulario-sign-in" id="register_form">
                 <div class="form-container">
                     <div>
-                        <h3>Sign in</h3>
+                        <h3>Crear usuario</h3>
                     </div>
                     <form id="register_form">
-                        <label for="name">Nombre</label>
-                        <input type="text" name="name">
+                        <div class="column">
+                            <label for="name">Nombre</label>
+                            <input type="text" name="name">
+                            
+                            <label for="apellido">Apellido</label>
+                            <input type="text" name="apellido">
+                            
+                            <label for="email">Email</label>
+                            <input type="text" name="email">
+                        </div>
                     
-                        <label for="apellido">Apellido</label>
-                        <input type="text" name="apellido">
-                    
-                        <label for="email">Email</label>
-                        <input type="text" name="email">
-                    
-                        <label for="password">Password</label>
-                        <input type="password" name="password">
-                        <label for="re-enter_password">Confirmar Password</label>
-                        <input type="password" name="re-enter_password">
-                    
-                        <label for="empresa">Empresa</label>
-                        <input type="text" name="empresa">
-                        <label for="rol">Rol</label>
-                        <select multiple name="rol">
-                            <option value="admin">Admin</option>
-                            <option value="provider">Proveedor</option>
-                            <option value="consumer">Consumidor</option>
-                        </select>
-                    
-                        <input type="submit" value="Registrar">
+                        <div class="column">
+                            <label for="password">Password</label>
+                            <input type="password" name="password">
+                            <label for="re-enter_password">Confirmar</label>
+                            <input type="password" name="re-enter_password">
+                            
+                            <label for="empresa">Empresa</label>
+                            <input type="text" name="empresa">
+                        </div>
+
+                        <div class="column">
+                            <label for="rol">Rol</label>
+                            <select name="rol">
+                                <option value="admin">Admin</option>
+                                <option value="provider">Proveedor</option>
+                                <option value="consumer">Consumidor</option>
+                            </select>
+                            <br><br><br><br><br><br><br>
+                            <input type="submit" value="Registrar">
+                        </div>
                     </form>
                 </div>
             </div>
 
-            <div class="products-by-sku"> <!--no functions for this yet-->
-                <label for="search">Buscar Producto</label>
-                <input name="search" type="search" placeholder="Ingrese sku">
+            <!--Search product information-->
+            <div class="products-by-sku"> 
+                <div>
+                    <label for="search">Buscar Producto</label>
+                    <input name="search" type="search" placeholder="Ingrese sku">
+                </div>
+                <div id="searchedProduct">
+                    <!--Data product searched-->
+                </div>
             </div>
         </div>
     </div>
@@ -220,6 +239,7 @@
 
     <script type="module" src="./functions/userMannagment/main.js"></script>
     <script type="module" src="./functions/fileMannagment/main.js"></script>
+    <script type="module" src="./functions/uiMannagment/main.js"></script>
     <script type="module" src="./functions/uiMannagment/main.js"></script>
     <script src="./functions/userMannagment/createUser.js"></script>
 </body>

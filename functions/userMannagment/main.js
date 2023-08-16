@@ -1,8 +1,9 @@
 "use strict";
 
-import { welcomeUser } from "../userMannagment/utils/userWelcome.js"
-import { setupProfileForm } from "../userMannagment/userUpdate.js"
-import { logOut } from "../userMannagment/utils/logOut.js"
+import { welcomeUser } from "../userMannagment/utils/userWelcome.js";
+import { setupProfileForm } from "../userMannagment/userUpdate.js";
+import { logOut } from "../userMannagment/utils/logOut.js";
+import { tokenHandler } from "../userMannagment/utils/authHandler.js";
 
 const logOutButton = document.querySelector("#logOut");
 
@@ -16,3 +17,5 @@ if (currentPage === '/home.html') {
 } else if (currentPage === '/perfil.html') {
     setupProfileForm();
 };
+
+tokenHandler();

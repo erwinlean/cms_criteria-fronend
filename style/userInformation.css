@@ -46,3 +46,27 @@ body > div.body-section > div.user > div.open-left_section > button{
 .files{
     padding: 10px 0;
 }
+
+/*Logins list style*/
+body > div.body-section > div.info-section > div.logins-info{
+    width: 95%;
+    padding: auto;
+}
+body > div.body-section > div.info-section > div.logins-info > h5{
+    font-size: 18px;
+}
+.login-item {
+    border-top: 1px solid rgb(255, 203, 112);
+    padding: 8px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.login-item > strong {
+    color: rgb(0, 80, 150); /* Adjust the color */
+}
+
+.login-item > span {
+    color: rgb(80, 80, 80); /* Adjust the color */
+}

@@ -27,6 +27,7 @@ button{
     vertical-align: middle;
 }
 .info-section{
+    padding-left: 25px;
     display: grid;
     width: -webkit-fill-available;
     text-align-last: center;
@@ -157,19 +158,29 @@ th, td {
 #formulario-sign-in > div{
     background-color: rgb(51,167,181);
     width: fit-content;
+    border-radius: 8px;
     padding: 0 50px;
 }
 .form-container > div{
     display: grid;
     justify-content: center;
 }
-h3{
-    margin-bottom: 50px;
+.column {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
 }
 form{
-    display: inline-grid;
+    display: flex;
+    gap: 20px;
+    max-width: 600px;
+    width: 100%;
+    margin: 20px;
 }
 label{
+    font-weight: bold;
     padding: 10px 0 10px 0;
 }
 input{
@@ -178,8 +189,8 @@ input{
     border: 1px solid white;
 }
 input:focus{
-    border-color: rgb(51,167,181); /* Cambia el color del borde */
-    box-shadow: 0 0 5px rgb(51,167,181); /* Agrega una sombra alrededor del input */
+    border-color: rgb(51,167,181);
+    box-shadow: 0 0 5px rgb(51,167,181);
     outline: none;
 }
 #login_form > input[type=text]:nth-child(2):focus{
@@ -189,14 +200,44 @@ input:focus{
     filter: drop-shadow(0 0 3px white);
 }
 input[type=submit]{
-    margin-top: 30px;
-    padding: 12px;
+    width: 120px;
+    height: 39px;
+    background-color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 20px;
+    margin-top: -4px;
     font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 input[type=submit]:hover{
     filter: drop-shadow(0 0 5px white);
     border-color: rgb(51,167,181)
 }
+input{
+    padding: 10px;
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+}
+input:focus{
+    outline: none;
+    border: 2px solid rgb(51, 167, 181);
+}
+/* Add this to your existing CSS */
+select {
+    padding: 5px;
+    border: none;
+    border-radius: 6px;
+    width: 100%;
+    appearance: none;
+    background-color: white;
+    background-repeat: no-repeat;
+    background-position: right center;
+    cursor: pointer;
+}
+
 .perfil{
     width: 90px;
 }
@@ -223,8 +264,18 @@ input[type=submit]:hover{
 }
 #formulario-sign-in{
     display: none;
+    place-self: center;
     max-height: 843.3px;
-    background-color: white;
+}
+.form-container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 
 /*Search products*/

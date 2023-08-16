@@ -1,0 +1,9 @@
+body > div.body-section > div.info-section > div.products-by-sku{
+    
+}
+body > div.body-section > div.info-section > div.products-by-sku > label{
+    border: 1px solid red !important;
+}
+body > div.body-section > div.info-section > div.products-by-sku > input[type=search]{
+
+}

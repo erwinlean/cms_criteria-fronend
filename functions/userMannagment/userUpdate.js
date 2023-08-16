@@ -1,6 +1,6 @@
 "use strict";
 
-import { user } from "../userMannagment/utils/userData.js"
+import { user } from "../userMannagment/utils/userData.js";
 
 export function setupProfileForm (){
 
