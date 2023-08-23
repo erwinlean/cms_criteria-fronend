@@ -9,21 +9,16 @@ export async function postFile () {
     const user = JSON.parse(localStorage.getItem("user"));
     const userEmail = user.email;
 
-    console.log("Archivo enviado por: " + userEmail);
-
     const fileData = {
         fileName: "test_file",
         brand: "pepito",
         data: transformData(products),
         userUpload: userEmail,
     };
-    
-    console.log(typeof(fileData));
-    console.log(fileData);
 
     try {
 
-        const response = await fetch('http://localhost:8080/api/files/create', {
+        const response = await fetch(/*'http://localhost:8080/api/files/create'*/ "https://vast-ruby-elk-kilt.cyclic.app/api/files/create", {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -34,9 +29,9 @@ export async function postFile () {
 
         if (response.ok) {
             const createdFile = await response.json();
-            console.log('Archivo creado:', createdFile);
+            alert('Archivo creado:', createdFile);
 
-            getFiles(); // Loaded files in the backend, showing in the DOM
+            getFiles();
         } else {
             const errorData = await response.json();
             console.log('Error al crear el archivo:', errorData);

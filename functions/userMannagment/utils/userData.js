@@ -1,6 +1,6 @@
 "use strict";
 
-export function user() {
+export function userData() {
     let user = JSON.parse(localStorage.getItem('user'));
 
     return user;

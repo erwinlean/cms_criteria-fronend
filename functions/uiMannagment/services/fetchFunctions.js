@@ -5,7 +5,8 @@ import { loginsDisplay, filesDisplay } from "./dataDisplay.js";
 const currentUser = JSON.parse(localStorage.getItem("user"));
 const currentUserEmail = currentUser.email;
 
-const url = "http://localhost:8080/api";
+//const url = "http://localhost:8080/api";
+const url = "https://vast-ruby-elk-kilt.cyclic.app/api";
 const token = localStorage.getItem("token");
 
 export const fetchUserFiles = async () => {

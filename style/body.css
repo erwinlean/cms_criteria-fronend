@@ -208,6 +208,8 @@ form{
 label{
     font-weight: bold;
     padding: 10px 0 10px 0;
+    gap: 10px;
+    display: flex;
 }
 input{
     padding: 8px;
@@ -229,17 +231,17 @@ input[type=submit]{
     width: 120px;
     height: 39px;
     background-color: white;
-    border: none;
+    border: 1px solid rgb(51, 167, 181);
     border-radius: 6px;
-    padding: 12px 20px;
-    margin-top: -4px;
+    padding: 10px 20px;
+    margin-top: 40px;
     font-weight: bold;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 input[type=submit]:hover{
     filter: drop-shadow(0 0 5px white);
-    border-color: rgb(51,167,181)
+    border-color: #ccc;
 }
 input{
     padding: 10px;

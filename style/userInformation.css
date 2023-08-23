@@ -1,7 +1,7 @@
 /* General */
 .user{
     position: relative;
-    width: 80px;
+    width: 120px;
     display: block;
     border-right: 1px solid rgb(255,203,112);
 }
@@ -64,9 +64,13 @@ body > div.body-section > div.info-section > div.logins-info > h5{
 }
 
 .login-item > strong {
-    color: rgb(0, 80, 150); /* Adjust the color */
+    color: rgb(51,167,181);
 }
 
 .login-item > span {
-    color: rgb(80, 80, 80); /* Adjust the color */
+    color: rgb(80, 80, 80);
+}
+/* files */
+#filesTable > tbody > tr:nth-child(1) > td:nth-child(5) > span:hover{
+    color: rgb(255, 203, 112) !important;
 }

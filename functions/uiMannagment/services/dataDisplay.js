@@ -60,7 +60,7 @@ export function filesDisplay(filesData) {
                 return `${key}: ${value[0].data}`;
             }).join("<br>");
         
-            dataCell.innerHTML = `Identifier: ${item.identifier},<br> Attributes: ${attributeText}${separatorStyle()}<span class="more-data" style="cursor: pointer; color: blue;">[Click for More]</span>`;
+            dataCell.innerHTML = `Identifier: ${item.identifier},<br> Attributes: ${attributeText}${separatorStyle()}<span class="more-data" style="cursor: pointer; color: rgb(51,167,181);">[Click for More]</span>`;
     
             const moreDataSpan = dataCell.querySelector(".more-data");
             moreDataSpan.addEventListener("click", () => {

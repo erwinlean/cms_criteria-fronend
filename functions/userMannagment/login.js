@@ -1,6 +1,7 @@
 "use strict";
 
-const url = "http://localhost:8080/api";
+const url = "https://vast-ruby-elk-kilt.cyclic.app/api";
+//const url = "http://localhost:8080/api";
 
 const loginForm = document.getElementById('login_form');
 

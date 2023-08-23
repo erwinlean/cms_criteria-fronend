@@ -1,18 +1,17 @@
 "use strict";
 
+import { transformElement } from "./utils/schemaHelpers.js";
+
 export function transformData(jsonData) {
     const transformedData = [];
 
     // forEach json need to be converted to the dataToBackend schema
     jsonData.forEach((element, index) => { 
-
-        if (typeof element.sku !== 'string') {
-            element.sku = String(element.sku);
-        };
+        const sku = transformElement(element.sku)
 
         if(index !== 0){
             const dataToBackend = {
-                "identifier": element.sku,
+                "identifier": sku,
                 "attributes": { // Add more atributes if you want to
                                 // Add email and user that upload the file
                     description:

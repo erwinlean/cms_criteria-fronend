@@ -1,8 +1,10 @@
 "use strict";
 
 const registerForm = document.getElementById('register_form');
+const url ="https://vast-ruby-elk-kilt.cyclic.app/api";
 
 registerForm.addEventListener('submit', function(event) {
+    
     event.preventDefault();
 
     const name = registerForm.elements.name.value;
@@ -34,21 +36,30 @@ registerForm.addEventListener('submit', function(event) {
         empresa: empresa,
         role: role
     };
-    axios.post(`${url}/users/create`, data)
-        .then(res => {
-            
-            const token = res.data.token;
-            const user = res.data.user;
-            const tokenExpiration = new Date().getTime() + 2 * 60 * 60 * 1000;
-    
-            localStorage.setItem('token', token);
-            localStorage.setItem('tokenExpiration', tokenExpiration);
-            //localStorage.setItem('user', JSON.stringify(user));
-            //window.location.href = 'home.html';
-            
-            registerForm.reset();
-        })
+
+    fetch(`${url}/users/create`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+    })
+    .then(response => response.json())
+    .then(data => {
+        const token = data.token;
+        const user = data.user;
+        const tokenExpiration = new Date().getTime() + 2 * 60 * 60 * 1000;
+
+        localStorage.setItem('token', token);
+        localStorage.setItem('tokenExpiration', tokenExpiration);
+        //localStorage.setItem('user', JSON.stringify(user));
+        //window.location.href = 'home.html';
+        
+        registerForm.reset();
+
+        alert("Usuario " + data.user.email + " creado.")
+    })
     .catch(err => {
-            console.error(err);
+        console.error(err);
     });
 });

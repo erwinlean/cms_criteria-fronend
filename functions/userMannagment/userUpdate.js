@@ -1,12 +1,17 @@
 "use strict";
 
-import { user } from "../userMannagment/utils/userData.js";
+import { userData } from "../userMannagment/utils/userData.js";
+import { welcomeUser } from "./utils/userWelcome.js";
 
 export function setupProfileForm (){
 
-    const url = "http://localhost:8080/api";
+    welcomeUser();
+
+    const url ="https://vast-ruby-elk-kilt.cyclic.app/api";
+    //const url = "http://localhost:8080/api";
 
     const formUpdateUser = document.getElementById('user_information');
+    const user = userData();
 
     // perfil.html
     if (formUpdateUser) {
