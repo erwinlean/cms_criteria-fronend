@@ -27,10 +27,9 @@ button{
     vertical-align: middle;
 }
 .info-section{
-    padding-left: 25px;
+    padding: 0 25px;
     display: grid;
     width: -webkit-fill-available;
-    text-align-last: center;
 }
 .select{
     text-align: center;
@@ -143,6 +142,7 @@ th, td {
 }
 .xlsx {
     padding: 35px 0;
+    text-align-last: center;
 }
 /*forms*/
 #formulario-login{
@@ -150,10 +150,28 @@ th, td {
     display: flex;
 }
 #formulario-login > div{
-    margin-top: 20%;
     background-color: rgb(51,167,181);
     width: fit-content;
-    padding: 100px 40px 0px 40px;
+    padding: 0px 40px 0px 40px;
+    display: block;
+}
+#formulario-login > div > div{
+    height: 20%;
+    gap: 0 !important;
+}
+#login_form > input[type=submit]:nth-child(5){
+    margin-top: 50px;
+    place-self: center;
+}
+#login_form > input[type=text]:nth-child(2){
+    margin-left: -10px;
+}
+#login_form > input[type=password]:nth-child(4){
+    margin-left: -10px;
+}
+#login_form{
+    display: inline-grid;
+    margin: 0;
 }
 #formulario-sign-in > div{
     background-color: rgb(51,167,181);
@@ -178,6 +196,14 @@ form{
     max-width: 600px;
     width: 100%;
     margin: 20px;
+}
+#user_information{
+    display: block !important;
+}
+#user_information > input[type=submit]:nth-child(15){
+    border: 1px solid rgb(51, 167, 181);
+    margin-top: 15px;
+    padding: 10px;
 }
 label{
     font-weight: bold;

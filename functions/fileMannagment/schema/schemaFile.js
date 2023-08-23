@@ -6,6 +6,10 @@ export function transformData(jsonData) {
     // forEach json need to be converted to the dataToBackend schema
     jsonData.forEach((element, index) => { 
 
+        if (typeof element.sku !== 'string') {
+            element.sku = String(element.sku);
+        };
+
         if(index !== 0){
             const dataToBackend = {
                 "identifier": element.sku,
@@ -19,7 +23,7 @@ export function transformData(jsonData) {
                                 data: element.description
                             }
                         ],
-                    at_articulo: [{
+                    atr_articulo: [{
                         "data": element.label,
                         "locale": null,
                         "scope": null

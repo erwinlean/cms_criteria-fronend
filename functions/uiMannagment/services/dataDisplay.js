@@ -2,10 +2,11 @@
 
 import {formatAndDisplayDates} from "../services/utils/datesHandler.js";
 import {separatorStyle} from "../services/utils/dataSeparator.js";
+import {openModalData} from "../services/utils/modalFile.js";
 
 export function loginsDisplay(loginsData) {
     const loginDatesList = document.getElementById("loginDatesList");
-    const loggedInUser = JSON.parse(localStorage.getItem('user'));
+    const loggedInUser = JSON.parse(localStorage.getItem("user"));
     const isAdmin = loggedInUser.role === "admin";
 
     loginsData.loginDates.forEach((userData) => {
@@ -19,7 +20,7 @@ export function loginsDisplay(loginsData) {
         nameEmailElement.textContent = isAdmin ? email : `${loggedInUser.name} (${email})`;
 
         const datesElement = document.createElement("span");
-        datesElement.innerHTML = isAdmin ? formatAndDisplayDates(dates.join(', ')) : formatAndDisplayDates(dates);
+        datesElement.innerHTML = isAdmin ? formatAndDisplayDates(dates.join(", ")) : formatAndDisplayDates(dates);
 
         userItem.appendChild(nameEmailElement);
         userItem.appendChild(datesElement);
@@ -29,7 +30,7 @@ export function loginsDisplay(loginsData) {
 };
 
 export function filesDisplay(filesData) {
-    const filesTable = document.getElementById("filesTable").getElementsByTagName('tbody')[0];
+    const filesTable = document.getElementById("filesTable").getElementsByTagName("tbody")[0];
 
     filesData.forEach(file => {
         const row = filesTable.insertRow();
@@ -47,21 +48,25 @@ export function filesDisplay(filesData) {
         userUploadCell.textContent = file.userUpload;
 
         const dataCell = row.insertCell();
-
-        if (Array.isArray(file.data)) {
-            const attributesText = file.data.map(item => {
-                const attributeText = Object.entries(item.attributes).map(([key, value]) => {
-                    if (typeof value === 'object' && value !== null && 'data' in value) {
-                        return `${key}: ${value.data}`;
-                    };
-
-                    return `${key}: ${value[0].data}`;
-                }).join('<br>');
+    
+        if (Array.isArray(file.data) && file.data.length > 0) {
+            const item = file.data[0];
+    
+            const attributeText = Object.entries(item.attributes).map(([key, value]) => {
+                if (typeof value === "object" && value !== null && "data" in value) {
+                    return `${key}: ${value.data}`;
+                };
+    
+                return `${key}: ${value[0].data}`;
+            }).join("<br>");
         
-                return `Identifier: ${item.identifier},<br> Attributes: ${attributeText}`;
-            }).join(separatorStyle());
-            
-            dataCell.innerHTML = attributesText;
+            dataCell.innerHTML = `Identifier: ${item.identifier},<br> Attributes: ${attributeText}${separatorStyle()}<span class="more-data" style="cursor: pointer; color: blue;">[Click for More]</span>`;
+    
+            const moreDataSpan = dataCell.querySelector(".more-data");
+            moreDataSpan.addEventListener("click", () => {
+                document.body.classList.add("modal-open");
+                openModalData(file);
+            });
         };
     });
 };

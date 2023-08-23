@@ -1,9 +1,33 @@
-body > div.body-section > div.info-section > div.products-by-sku{
+/*Title*/
+body > div.body-section > div.info-section > div.products-by-sku > div:nth-child(1){
+    display: grid;
+    height: 110px;
+    position: relative;
+}
+/*Search input*/
+body > div.body-section > div.info-section > div.products-by-sku > div:nth-child(1) > input[type=search]{
     
 }
-body > div.body-section > div.info-section > div.products-by-sku > label{
-    border: 1px solid red !important;
+body > div.body-section > div.info-section > div.products-by-sku > div:nth-child(1) > input[type=search]:focus{
+    border-color: rgb(51,167,181);
 }
-body > div.body-section > div.info-section > div.products-by-sku > input[type=search]{
-
+/*Products*/
+#searchedProduct {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    justify-content: center;
+    align-items: start;
+    margin-top: 25px;
+}
+.product-list {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    min-height: 250px;
+}
+.product-list:hover {
+    border-color: rgb(51,167,181);
 }
