@@ -5,7 +5,10 @@ import { deleteUser } from "./utils/usersRequest.js";
 
 // Entry point
 document.addEventListener("DOMContentLoaded", () => {
-    displayUsers();
+    setTimeout(() => {
+        displayUsers();
+    }, 1000);
+    
 
 // hacer el la captura manual, no con evento
 
@@ -18,6 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
             displayAlert(userEmail, (confirmed) => {
                 if (confirmed) {
                     deleteUser(userEmail);
+
+                    // Display again the current users accounts
+                    displayUsers();
                 };
             });
         };

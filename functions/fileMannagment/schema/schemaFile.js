@@ -6,8 +6,8 @@ export function transformData(jsonData) {
     const transformedData = [];
 
     // forEach json need to be converted to the dataToBackend schema
-    jsonData.forEach((element, index) => { 
-        const sku = transformElement(element.sku)
+    jsonData.forEach((element, index) => {
+        const sku = element.sku
 
         if(index !== 0){
             const dataToBackend = {

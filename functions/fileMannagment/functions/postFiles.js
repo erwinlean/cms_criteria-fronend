@@ -2,6 +2,7 @@
 
 import { transformData } from '../schema/schemaFile.js';
 import { products } from '../functions/convertFiles.js';
+import { fetchUserFiles } from '../../uiMannagment/services/usersData.js';
 
 export async function postFile () {
     
@@ -17,7 +18,7 @@ export async function postFile () {
     };
 
     try {
-        const response = await fetch(/*'http://localhost:8080/api/files/create'*/ "https://vast-ruby-elk-kilt.cyclic.app/api/files/create", {
+        const response = await fetch('http://localhost:8080/api/files/create'/*"https://vast-ruby-elk-kilt.cyclic.app/api/files/create"*/, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -30,7 +31,7 @@ export async function postFile () {
             const createdFile = await response.json();
             alert('Archivo creado:', createdFile);
 
-            getFiles();
+            fetchUserFiles();
         } else if (response.status === 403) {
             alert('No tienes permiso para crear archivos');
         } else {

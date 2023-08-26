@@ -74,6 +74,11 @@ export function loginsDisplay(loginsData) {
 export function filesDisplay(filesData) {
     const filesTable = document.getElementById("filesTable").getElementsByTagName("tbody")[0];
 
+    // Clear existing rows
+    while (filesTable.firstChild) {
+        filesTable.removeChild(filesTable.firstChild);
+    };
+
     filesData.forEach(file => {
         const row = filesTable.insertRow();
 

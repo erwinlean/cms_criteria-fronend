@@ -26,7 +26,7 @@ export const fetchUserFiles = async () => {
             const data =  await response.json();
             const res = filesDisplay(data)
 
-            return res
+            return res;
         } else {
             const receivedInfo = await response.json();
             console.log("Error while fetching user files:", receivedInfo);
@@ -46,7 +46,7 @@ export const fetchUserLogins = async () => {
                 "Authorization": `Bearer ${token}`,
                 "User-Email": currentUserEmail
             }
-        });
+        });0
 
         if (response.ok) {
             const data =  await response.json();

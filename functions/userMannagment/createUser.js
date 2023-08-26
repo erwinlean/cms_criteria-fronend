@@ -1,10 +1,13 @@
 "use strict";
 
+import { displayUsers } from "../userMannagment/utils/displayUsers.js"
+
 const registerForm = document.getElementById('register_form');
-const url ="https://vast-ruby-elk-kilt.cyclic.app/api";
+const url ="https://vast-ruby-elk-kilt.cyclic.app/api/users/create";
 
 registerForm.addEventListener('submit', function(event) {
-    const currentUserEmail = JSON.parse(localStorage.getItem('user.email'));
+    const user = JSON.parse(localStorage.getItem('user'));
+    const currentUserEmail = user.email;
 
     event.preventDefault();
 
@@ -31,7 +34,10 @@ registerForm.addEventListener('submit', function(event) {
         role: role
     };
 
-    fetch(`${url}/users/create`, {
+    console.log(data)
+    console.log(currentUserEmail)
+
+    fetch(`${url}`, {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
@@ -41,18 +47,20 @@ registerForm.addEventListener('submit', function(event) {
     })
     .then(response => response.json())
     .then(data => {
-        const token = data.token;
-        const user = data.user;
-        const tokenExpiration = new Date().getTime() + 2 * 60 * 60 * 1000;
+        //const token = data.token;
+        //const user = data.user;
+        //const tokenExpiration = new Date().getTime() + 2 * 60 * 60 * 1000;
 
-        localStorage.setItem('token', token);
-        localStorage.setItem('tokenExpiration', tokenExpiration);
+        //localStorage.setItem('token', token);
+        //localStorage.setItem('tokenExpiration', tokenExpiration);
         //localStorage.setItem('user', JSON.stringify(user));
         //window.location.href = 'home.html';
         
         registerForm.reset();
 
         alert("Usuario " + data.user.email + " creado.")
+
+        displayUsers();
     })
     .catch(err => {
         console.error(err);

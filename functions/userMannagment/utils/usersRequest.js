@@ -1,14 +1,20 @@
 "use strict";
 
-const getUrl = "https://vast-ruby-elk-kilt.cyclic.app/api/users/getusers";
-const deleteUrl = "https://vast-ruby-elk-kilt.cyclic.app/api/users/deleteuser";
+import { fetchUserFiles } from '../../uiMannagment/services/usersData.js';
+import { logOut } from "../../userMannagment/utils/logOut.js";
 
-const user = localStorage.getItem("user");
+//const getUrl = "https://vast-ruby-elk-kilt.cyclic.app/api/users/users";
+//const deleteUrl = "https://vast-ruby-elk-kilt.cyclic.app/api/users/delete";
+const getUrl = "http://localhost:8080/api/users/users";
+const deleteUrl = "http://localhost:8080/api/users/delete";
+
+const user = JSON.parse(localStorage.getItem("user"));
 const token = localStorage.getItem("token");
-const currentUser = user.email;
+const currentUser = user.email
 
 // Get
 export async function getUsers() {
+    console.log(currentUser)
     try {
         const response = await fetch(getUrl, {
             method: "GET",
@@ -23,7 +29,8 @@ export async function getUsers() {
         };
 
         const data = await response.json();
-        return data;
+        console.log(data)
+        return await data;
     } catch (error) {
         console.error("Error fetching users:", error);
     };
@@ -31,23 +38,29 @@ export async function getUsers() {
 
 // Delete
 export async function deleteUser(emailToDelete) {
-    console.log(`User deleted: ${emailToDelete}`);
-
     try {
         const response = await fetch(`${deleteUrl}/${emailToDelete}`, {
             method: "DELETE",
             headers: {
                 "Authorization": `Bearer ${token}`,
-                "User-Email": currentUser,
+                "User-Email": currentUser
             },
-            body: JSON.stringify({ email: emailToDelete })
         });
 
-        if (!response.ok) {
+        if (response.status !== 200) {
             throw new Error(`Failed to delete user: ${response.status}`);
         };
 
-        console.log(`User deleted: ${emailToDelete}`);
+        console.log(currentUser)
+        console.log(emailToDelete)
+
+        if(currentUser == emailToDelete){
+            logOut();
+        };
+
+        // Actualizes the files, if the user is deleted, then delete the files of the user to.
+        fetchUserFiles(); 
+        const data = await response.json();
     } catch (error) {
         console.error(`Error deleting user: ${emailToDelete}`, error);
         throw error;
