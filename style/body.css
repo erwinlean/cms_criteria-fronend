@@ -17,16 +17,18 @@ button{
     justify-items: center;
     height: auto;
     width: 101%;
-    min-height: 450px;
+    min-height: 850px;
     padding: 30px 0;
 }
 .body-section > .info-section .general-title{
-    color:#0366d6;
+    color:rgb(51, 167, 181);
     font-size: 20px;
     text-align: center;
     vertical-align: middle;
 }
 .info-section{
+    justify-content: center;
+    margin-top: 15px;
     padding: 0 25px;
     display: grid;
     width: -webkit-fill-available;
@@ -54,10 +56,13 @@ h4{
 }
 .data-needed > table{
     border-collapse: unset;
-    border: solid 2px  rgb(51,167,181);
     font-size: 14px;
     padding: 8px;
+    border-radius: 5px;
     box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+}
+#upload-section > div.data-needed > table > tbody > tr > td > img{
+    width: 82px;
 }
 .data-needed > table > tbody > tr > td{
     border: none;
@@ -75,28 +80,36 @@ h4{
 }
 input[type=file]::file-selector-button{
     cursor: pointer;
-    background-color: rgb(255,203,112);
+    padding: 15px 25px !important;
+    background-color: white;
     border-radius: 5px;
-    padding: 10px;
     margin: 5px;
     border-color: rgb(51,167,181);
 }
-input[type=file]::file-selector-button:hover{
-    background-color: rgb(51,167,181);
-}
 .input-class{
-    padding-right: 35px;
+    margin-right: 15px;
+}
+.input-class::file-selector-button:hover{
+    background-color: #f5f5f5;
+    filter: drop-shadow(0 0 5px rgb(51,167,181));
+}
+#input:focus{
+    border: none !important;
+}
+.btn-section{
+    align-self: center;
 }
 .btn-section > .btn{
     cursor: pointer;
-    background-color: rgb(255,203,112);
+    background-color: white;
     border-radius: 5px;
-    padding: 10px;
+    padding: 15px 25px !important;
     margin: 5px;
     border-color: rgb(51,167,181);
 }
 .btn-section > .btn:hover{
-    background-color: rgb(51,167,181);
+    background-color: #f5f5f5;
+    filter: drop-shadow(0 0 5px rgb(51,167,181));
 }
 input[type="submit"] {
     cursor: pointer;
@@ -131,10 +144,13 @@ th, td {
 .xlsx a button{
     color: rgb(51,167,181);
     border: 1px solid rgb(51,167,181);
-    padding: 10px;
+    padding: 15px;
     border-radius: 8px;
+    margin: 0 10px;
+    background-color: #f7f8f9;
 }
 .xlsx a button:hover {
+    background-color: white;
     filter: drop-shadow(0 0 5px rgb(51,167,181));
 }
 .xlsx a button:active {
@@ -145,33 +161,27 @@ th, td {
     text-align-last: center;
 }
 /*forms*/
-#formulario-login{
-    min-height: 843.3px;
-    display: flex;
+/*create user form*/
+.form-container {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: #f5f5f5;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 400px;
+    border: 1px solid #ccc;
 }
 #formulario-login > div{
-    background-color: rgb(51,167,181);
-    width: fit-content;
-    padding: 0px 40px 0px 40px;
-    display: block;
+    border: none;
 }
-#formulario-login > div > div{
-    height: 20%;
-    gap: 0 !important;
-}
-#login_form > input[type=submit]:nth-child(5){
-    margin-top: 50px;
-    place-self: center;
-}
-#login_form > input[type=text]:nth-child(2){
-    margin-left: -10px;
-}
-#login_form > input[type=password]:nth-child(4){
-    margin-left: -10px;
-}
-#login_form{
+#register_form{
     display: inline-grid;
-    margin: 0;
+    gap: 20px;
+    max-width: fit-content;
+    margin: 20px;
 }
 #formulario-sign-in > div{
     background-color: rgb(51,167,181);
@@ -183,11 +193,24 @@ th, td {
     display: grid;
     justify-content: center;
 }
-.column {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+#register_form > div:nth-child(7) > select{
+    padding: 18px;
+    width: 108%;
+}
+#register_form > div:nth-child(8){
+    margin-top: 30px;
+}
+.form-container select option {
+    color: #333;
+    padding: 10px;
+}
+/*other*/
+#user_information{
+    display: block !important;
+}
+#user_information > input[type=submit]:nth-child(15){
+    border: 1px solid rgb(51, 167, 181);
+    margin-top: 15px;
     padding: 10px;
 }
 form{
@@ -196,14 +219,6 @@ form{
     max-width: 600px;
     width: 100%;
     margin: 20px;
-}
-#user_information{
-    display: block !important;
-}
-#user_information > input[type=submit]:nth-child(15){
-    border: 1px solid rgb(51, 167, 181);
-    margin-top: 15px;
-    padding: 10px;
 }
 label{
     font-weight: bold;
@@ -221,11 +236,55 @@ input:focus{
     box-shadow: 0 0 5px rgb(51,167,181);
     outline: none;
 }
+/*Login*/
+#formulario-login{
+    min-height: 843.3px;
+    display: flex;
+}
+#formulario-login > div{
+    background-color: rgb(51,167,181);
+    width: fit-content;
+    padding: 0px 40px 0px 40px;
+    color: white;
+    display: block;
+    margin-bottom: 120px;
+    box-shadow: none;
+    align-self: center;
+}
+#formulario-login > div > div{
+    height: 20%;
+    gap: 0 !important;
+}
+#login_form > input[type=submit]:nth-child(5){
+    margin-top: 50px;
+    place-self: center;
+    width: fit-content;
+}
+#login_form > input[type=text]:nth-child(2){
+    margin-left: -10px;
+}
+#login_form > input[type=password]:nth-child(4){
+    margin-left: -10px;
+}
+#login_form{
+    display: inline-grid;
+    margin: 0;
+}
+#formulario-login > div > div > h3{
+    align-self: center;
+    font-size: 25px;
+}
 #login_form > input[type=text]:nth-child(2):focus{
-    filter: drop-shadow(0 0 3px white);
+    border-color: white;
 }
 #login_form > input[type=password]:nth-child(4):focus{
-    filter: drop-shadow(0 0 3px white);
+    border-color: white;
+}
+#login_form > input[type=submit]:nth-child(5){
+    color: rgb(51, 167, 181);
+}
+#login_form > label:nth-child(1),#login_form > label:nth-child(3){
+    margin-left: -10px;
 }
 input[type=submit]{
     width: 120px;
@@ -240,7 +299,7 @@ input[type=submit]{
     transition: background-color 0.3s;
 }
 input[type=submit]:hover{
-    filter: drop-shadow(0 0 5px white);
+    filter: drop-shadow(0 0 5px rgb(51,167,181));
     border-color: #ccc;
 }
 input{
@@ -288,22 +347,7 @@ select {
     justify-content: center;
 }
 .imagen-index img{
-    width: 90%;
-}
-#formulario-sign-in{
-    display: none;
-    place-self: center;
-    max-height: 843.3px;
-}
-.form-container {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    background-color: #f5f5f5;
-    border-radius: 8px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    text-align: center;
+    width: 40%;
 }
 
 /*Search products*/
@@ -314,11 +358,9 @@ body > div.body-section > div.info-section > div.products-by-sku{
 /* table */
 .scrollable-table {
     overflow: auto;
-    display: none;
+    display: block !important;
     margin: 25px;
-}
-body > div.body-section > div.info-section > div.files-info{
-    overflow: auto;
-    display: none;
-    margin: 25px;
+    width: fit-content;
+    margin: 0 auto;
+    max-height: 300px;
 }

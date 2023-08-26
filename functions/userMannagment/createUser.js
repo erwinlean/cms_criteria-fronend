@@ -4,27 +4,21 @@ const registerForm = document.getElementById('register_form');
 const url ="https://vast-ruby-elk-kilt.cyclic.app/api";
 
 registerForm.addEventListener('submit', function(event) {
-    
+    const currentUserEmail = JSON.parse(localStorage.getItem('user.email'));
+
     event.preventDefault();
 
     const name = registerForm.elements.name.value;
     const apellido = registerForm.elements.apellido.value;
     const email = registerForm.elements.email.value;
-    const reenterPassword = registerForm.elements['re-enter_password'].value;
     const password = registerForm.elements.password.value;
+    const reenterPassword = registerForm.elements['re-enter_password'].value;
     const empresa = registerForm.elements.empresa.value;
     const role = registerForm.elements.role.value;
 
-    //console.log('Datos de registro:');
-    //console.log('Nombre:', name);
-    //console.log('Apellido:', apellido);
-    //console.log('Email:', email);
-    //console.log('Password:', password);
-    //console.log('Empresa:', empresa);
-    //console.log('Role:', role);
-
     if (password !== reenterPassword) {
         alert('Las contraseñas no coinciden');
+
         return;
     };
 
@@ -40,7 +34,8 @@ registerForm.addEventListener('submit', function(event) {
     fetch(`${url}/users/create`, {
         method: 'POST',
         headers: {
-            'Content-Type': 'application/json'
+            'Content-Type': 'application/json',
+            "User-Email": currentUserEmail // Must be email for admin for access the info
         },
         body: JSON.stringify(data)
     })

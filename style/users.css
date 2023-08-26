@@ -1,0 +1,75 @@
+/*General*/
+#userMannagment{
+    display: none;
+    width: 800px;
+}
+/*Select sub-section*/
+#usersBtn {
+    width: 70%;
+    display: flex;
+    margin: 0 auto;
+    margin-top: 80px;
+    justify-content: space-evenly;
+    position: relative;
+}
+#userMannagment > div > button{
+    border: 1px solid rgb(51,167,181);
+    color: rgb(51,167,181);
+    font-weight: bolder;
+    border-radius: 5px;
+    padding: 25px;
+}
+#userMannagment > div > button:hover{
+    background-color: white;
+}
+/*Create*/
+#userMannagment > div.form-container{
+    position: relative;
+    justify-content: center;
+    position: relative;
+    margin: 30px 170px;
+}
+/*Delete*/
+#userMannagment > div.users-list{
+    height: fit-content;
+    padding: 40px;
+    display: none;
+}
+#userMannagment > div.users-list > h3{
+    font-weight: bold;
+    margin-bottom: 45px;
+}
+#usersTable{
+    width: 100%;
+    border: 1px solid #ccc;
+    display: inline-table !important;
+    border-collapse:unset;
+    border-radius: 5px;
+    background-color: #f5f5f5;
+    padding: 16px;
+    text-align: center;
+    vertical-align: middle;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+#usersTable > tbody > tr > th{
+    border: none;
+    font-size: 20px;
+}
+#usersTable > tbody > tr > td{
+    border: none;
+    color: rgb(51,167,181);
+    font-size: 18px;
+}
+#usersTable > tbody > tr > td > button{
+    padding: 9px 14px 11px 14px;
+    color: rgb(51,167,181);
+    font-weight: bolder;
+    border: 1px solid rgb(51,167,181);
+    border-radius: 5px;
+    background-color: white;
+}
+#usersTable > tbody > tr > td > button:hover{
+    background-color: #f7f8f9;
+    color: red;
+    border-color: red;
+}

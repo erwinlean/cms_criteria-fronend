@@ -1,6 +1,6 @@
 "use strict";
 
-import { fetchUserFiles, fetchUserLogins } from "../uiMannagment/services/fetchFunctions.js";
+import { fetchUserFiles, fetchUserLogins } from "./services/usersData.js";
 import { expandUpload, expandLogins, expandFiles, expandCreateUser, expandSearchProduct } from "../uiMannagment/services/expandFunctions.js";
 
 const index = document.querySelector("body > div.body-section > div.user > div > div.upload > button");

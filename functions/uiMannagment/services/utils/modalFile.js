@@ -8,8 +8,11 @@ export function openModalData(file) {
 
     table.innerHTML = "";
 
-    // Iterate through file properties and add them to the table
-    for (const [key, value] of Object.entries(file)) {
+    const entries = Object.entries(file);
+
+    // Iterate through file properties and add them to the table, skipping the first and last entry
+    for (let i = 1; i < entries.length - 1; i++) {
+        const [key, value] = entries[i];
         const row = document.createElement("tr");
         const keyCell = document.createElement("td");
         keyCell.textContent = key;
@@ -36,6 +39,10 @@ export function openModalData(file) {
         row.appendChild(keyCell);
         row.appendChild(valueCell);
         table.appendChild(row);
+
+        // Convert the date:
+        const dateFile = document.querySelector("#fileInfoTable > tr:nth-child(5) > td:nth-child(2)");
+        //formatAndDisplayDates(dateFile);
     };
 
     modal.style.display = "block";

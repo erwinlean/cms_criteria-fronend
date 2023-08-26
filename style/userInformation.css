@@ -1,16 +1,35 @@
 /* General */
 .user{
     position: relative;
-    width: 120px;
+    width: 90px;
     display: block;
+    padding: 5px 25px;
     border-right: 1px solid rgb(255,203,112);
+}
+.infor_pers{
+    display: grid;
+    position: relative;
+    justify-content: center;
+    text-align: -webkit-center;
 }
 .user button{
     border: none;
     background-color: transparent;
 }
+.infor_pers > div{
+    padding-bottom: 5px !important;
+}
 .user img {
+    width: 50px;
+}
+body > div.body-section > div.user > div > div.search-products > button > img{
     width: 60px;
+}
+body > div.body-section > div.user > div > div.config > button > img{
+    width: 60px;
+}
+.user img:hover {
+    filter: drop-shadow(0 0 2px rgb(51,167,181));
 }
 /*Inc data*/
 li{
@@ -37,19 +56,20 @@ body > div.body-section > div.user > div.open-left_section > button{
     padding: 0;
     margin: 0;
 }
-.upload{
+.upload,.logins,.files,.create-user, .search-products{
     padding: 10px 0;
 }
-.logins{
-    padding: 10px 0;
+.config{
+    padding: 175px 0;
+    position: relative;
+    display: flex;
+    justify-content: center;
 }
-.files{
-    padding: 10px 0;
-}
-
 /*Logins list style*/
 body > div.body-section > div.info-section > div.logins-info{
-    width: 95%;
+    width: 50vw;
+    padding: auto;
+    display: none;
     padding: auto;
 }
 body > div.body-section > div.info-section > div.logins-info > h5{
@@ -69,6 +89,7 @@ body > div.body-section > div.info-section > div.logins-info > h5{
 
 .login-item > span {
     color: rgb(80, 80, 80);
+    width: 250px;
 }
 /* files */
 #filesTable > tbody > tr:nth-child(1) > td:nth-child(5) > span:hover{

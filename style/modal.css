@@ -1,3 +1,4 @@
+/*Modal Files*/
 .modal {
     display: none;
     position: fixed;
@@ -33,4 +34,93 @@
 }
 #fileModal > div > span:hover{
     color: rgb(51, 167, 181);
+}
+/*Modals Logins*/
+/* Modal Styles */
+.modal-1 {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+    transition: opacity 0.2s ease-in-out;
+}
+.modal-content-1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 40px 34px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    z-index: 2222;
+    overflow-y: auto; /* Add this line to enable vertical scrolling */
+    max-height: 80vh; /* Limit the max height to 80% of the viewport height */
+}
+.close-1 {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: bolder;
+}
+.close-1:hover{
+    color: rgb(51, 167, 181);
+}
+#loginDatesList > li > span > button{
+    border: none;
+    background-color: transparent;
+    color: rgb(51, 167, 181);
+}
+#loginDatesList > li > span > button:hover{
+    color: rgb(255,203,112);
+}
+#modal-dates-1{
+    font-size: 21px;
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 300px;
+    text-align: center;
+    display: table-caption;
+}
+/*Modal delete users*/
+#deleteModal > div > span{
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: bolder;
+}
+#deleteModal > div > span:hover{
+    color: rgb(51, 167, 181);
+}
+#deleteModal > div > p{
+    font-weight: bolder;
+    padding: 10px;
+    font-size: 25px;
+}
+#deleteModal > div > div{
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+#confirmDelete, #cancelDelete{
+    padding: 15px;
+    font-weight: bolder;
+    font-size: 17px;
+    border-radius: 5px;
+    border-color: red;
+    color: red;
+    margin: 10px;
+}
+#confirmDelete:hover, #cancelDelete:hover{
+    background-color: white;
 }

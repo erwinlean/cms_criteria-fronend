@@ -7,6 +7,10 @@
     border-bottom: 1px solid rgb(255,203,112);
     justify-content: space-between;
 }
+body > div.header > a{
+width: 220px;
+cursor: pointer;
+}
 .header > .logo {
     height: 75px;
 }
@@ -18,26 +22,38 @@
 }
 body > div.header > div > a{
     width: fit-content;
+    margin-right: 15px;
 }
 body > div.header > div > a > img{
     display: flex;
     align-items: center;
-    width: 50px;
+    width: 30px;
 }
 #logOut{
+    margin-right: 15px;
     border-style: none;
     background-color: transparent;
 }
 #logOut > img{
     cursor: pointer;
     display: flex;
-    width: 40px;
+    width: 52px;
     align-items: center;
+}
+body > div.header > div.header-icons > a > img.perfil{
+    padding-bottom: 3px;
 }
 body > div.header > div:nth-child(2){
     align-self: center;
     font-weight: bold;
 }
 body > div.header > div.header-icons > a > img{
-    width: 45px;
+    width: 44px;
+    margin-right: 15px;
+}
+.header-icons > a > img:hover{
+    filter: drop-shadow(0 0 1px rgb(51,167,181));
+}
+#logOut > img:hover{
+    filter: drop-shadow(0 0 1px rgb(51,167,181));
 }

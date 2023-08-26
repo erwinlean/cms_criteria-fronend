@@ -3,7 +3,7 @@
 import { loginsDisplay, filesDisplay } from "./dataDisplay.js";
 
 const currentUser = JSON.parse(localStorage.getItem("user"));
-const currentUserEmail = currentUser.email;
+const currentUserEmail = currentUser.email;  // Must be email for admin or provider for access the info
 
 //const url = "http://localhost:8080/api";
 const url = "https://vast-ruby-elk-kilt.cyclic.app/api";

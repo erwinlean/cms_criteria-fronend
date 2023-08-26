@@ -13,11 +13,10 @@ export async function postFile () {
         fileName: "test_file",
         brand: "pepito",
         data: transformData(products),
-        userUpload: userEmail,
+        userUpload: userEmail, // Must be email for admin or provider for access the info
     };
 
     try {
-
         const response = await fetch(/*'http://localhost:8080/api/files/create'*/ "https://vast-ruby-elk-kilt.cyclic.app/api/files/create", {
             method: 'POST',
             headers: {
@@ -32,10 +31,14 @@ export async function postFile () {
             alert('Archivo creado:', createdFile);
 
             getFiles();
+        } else if (response.status === 403) {
+            alert('No tienes permiso para crear archivos');
         } else {
             const errorData = await response.json();
-            console.log('Error al crear el archivo:', errorData);
-        };
+            console.error('Error al crear el archivo:', errorData);
+            
+            alert('Error al crear el archivo. Por favor, inténtalo de nuevo más tarde.');
+        }
     } catch (error) {
         console.log('Error en la solicitud:', error);
     };

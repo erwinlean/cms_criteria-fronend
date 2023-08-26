@@ -5,8 +5,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--cdn archives XLSX/Axios-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"></script>
+    <!--Favicon-->
+    <link rel="icon" href="./assets/criteriaIco.ico" type="image/x-icon">
+
+    <!--cdn archives XLSX-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 
     <!--web icon-->
@@ -19,6 +21,7 @@
     <link rel="stylesheet" href="./style/footer.css">
     <link rel="stylesheet" href="./style/userInformation.css">
     <link rel="stylesheet" href="./style/search.css">
+    <link rel="stylesheet" href="./style/users.css">
     <link rel="stylesheet" href="./style/modal.css">
 
     <script>
@@ -54,24 +57,30 @@
             <!--Left section icons-->
             <div class="infor_pers">
                 <div class="upload">
-                    <button><img src="./assets/upload.png" alt="upload icon" title="Upload">Subir archivo</button>
+                    <button><img src="./assets/upload.png" alt="upload icon" title="Upload"><p>Cargar archivos</p></button>
                 </div>
 
                 <div class="logins">
-                    <button><img src="./assets/logins.png" alt="logins icon" title="Logins">Logins</button>
+                    <button><img src="./assets/logins.png" alt="logins icon" title="Logins"><p>Logins</p></button>
                 </div>
                 
                 <div class="files">
-                    <button><img src="./assets/files.png" alt="Files icon" title="Files">Archivos subidos</button>
+                    <button><img src="./assets/files.png" alt="Files icon" title="Files"><p>Archivos subidos</p></button>
                 </div>
 
                 <div class="create-user">
-                    <button><img src="./assets/unlarge.png" alt="Create user icon" title="Create user">Crear usuarios</button>
+                    <button><img src="./assets/users.png" alt="Create user icon" title="Create user"><p>Administracion de usuarios</p></button>
                 </div>
 
                 <div class="search-products">
-                    <button><img src="./assets/enlarge.png" alt="Product Search icon" title="Product Search">Buscar productos</button>
+                    <button><img src="./assets/search.png" alt="Product Search icon" title="Product Search"><p>Buscar productos</p></button>
                 </div>
+
+                <!-- nothing yet to configure section
+                    <div class="config">
+                    <button><img src="./assets/config.png" alt="Configuration icon" title="Configuration"><p>Configuración</p></button>
+                </div>
+                -->
             </div>
 
         </div>
@@ -79,7 +88,7 @@
         <!--files from backend (data)-->
         <div class="info-section"> 
             <div class="files-info">
-                <h5>Archivos enviados</h5>
+                <h3>Archivos enviados</h3>
                 <table id="filesTable">
                     <thead>
                         <tr>
@@ -96,13 +105,28 @@
                 </table>
             </div>
 
+            <!--Modals-->
             <div id="fileModal" class="modal">
                 <div class="modal-content">
-                    <!-- Add an exit button or icon here to close the modal -->
                     <span class="close">&times;</span>
                     <table id="fileInfoTable">
-                        <!-- File information will be displayed here -->
                     </table>
+                </div>
+            </div>
+            <div id="modal" class="modal-1">
+                <div class="modal-content-1">
+                    <span class="close-1">&times;</span>
+                    <div id="modal-dates-1"></div>
+                </div>
+            </div>
+            <div id="deleteModal" class="modal">
+                <div class="modal-content">
+                    <span class="close-2">&times;</span>
+                    <p>¿Estás seguro de que deseas eliminar este usuario?</p>
+                    <div>
+                        <button id="confirmDelete">Confirmar</button>
+                        <button id="cancelDelete">Cancelar</button>
+                    </div>
                 </div>
             </div>
 
@@ -121,13 +145,8 @@
                         <table>
                             <tbody>
                                 <tr>
-                                    <td>• XLSX</td>
-                                </tr>
-                                <tr>
-                                    <td>• XLS</td>
-                                </tr>
-                                <tr>
-                                    <td>• CSV</td>
+                                    <td><img src="./assets/xlsx.png" alt="xlsx icon" title="xlsx"></td>
+                                    <td><img src="./assets/csv.png" alt="csv icon" title="csv"></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -135,14 +154,18 @@
 
                     <div class="container_info-section">
                         <div class="info-section">
-                            <h4 class="general-title">Carga de productos</h4>
-                            <p>Area de carga de productos para proveedores</p>
-                            <p>A continuacion se encuentra ejemplo de como debe estar el xlsx, junto a un xlsx listo para completar</p>
+                            <h4>Guia para carga de productos</h4>
+                            <p>- Descargar archivo "Listo para completar" que se encuentra a continuacion.</p>
+                            <p>- Completar el archivo con la informacion correspondiente a sus productos.</p>
+                            <p>- Enviar archivo una vez completado.</p>
+                            <br>
+                            <br>
+                            <p><strong>Ejemplo de archivo para cargar, y archivo vacio para completar</strong></p>
                         </div>
 
                         <div class="xlsx">
-                            <a href="./example.xlsx" download><button>xlsx de ejemplo</button></a>
-                            <a href="./errorExample.xlsx" download><button>xlsx para completar</button></a>
+                            <a href="./example.xlsx" download><button>Archivo de ejemplo</button></a>
+                            <a href="./errorExample.xlsx" download><button>Listo para completar</button></a>
                         </div>
                     </div>
 
@@ -167,53 +190,74 @@
                     </table>
             </div>
 
-            <!-- Create user-->
-            <div id="formulario-sign-in" id="register_form">
+            <!--Users mannagment-->
+            <div id="userMannagment" class="users">
+                <div id="usersBtn">
+                    <button id="createUser" >Crear usuarios</button>
+                    <button id="deleteUser" >Eliminar usuarios</button>
+                </div>
+                <!-- Create user-->
                 <div class="form-container">
-                    <div>
-                        <h3>Crear usuario</h3>
-                    </div>
+                    <h3>Crear usuario</h3>
                     <form id="register_form">
-                        <div class="column">
+                        <div class="input-container">
                             <label for="name">Nombre</label>
-                            <input type="text" name="name">
-                            
+                            <input type="text" name="name" id="name" autocomplete="username" required>
+                        </div>
+                        <div class="input-container">
                             <label for="apellido">Apellido</label>
-                            <input type="text" name="apellido">
-                            
+                            <input type="text" name="apellido" id="apellido" required>
+                        </div>
+                        <div class="input-container">
                             <label for="email">Email</label>
-                            <input type="text" name="email">
+                            <input type="email" name="email" id="email" autocomplete="email" required>
                         </div>
-                    
-                        <div class="column">
+                        <div class="input-container">
                             <label for="password">Password</label>
-                            <input type="password" name="password">
-                            <label for="re-enter_password">Confirmar</label>
-                            <input type="password" name="re-enter_password">
-                            
-                            <label for="empresa">Empresa</label>
-                            <input type="text" name="empresa">
+                            <input type="password" name="password" id="password" required>
                         </div>
-
-                        <div class="column">
+                        <div class="input-container">
+                            <label for="re-enter_password">Confirmar</label>
+                            <input type="password" name="re-enter_password" id="re-enter_password" required>
+                        </div>
+                        <div class="input-container">
+                            <label for="empresa">Empresa</label>
+                            <input type="text" name="empresa" id="empresa" required>
+                        </div>
+                        <div class="input-container">
                             <label for="role">Rol</label>
-                            <select name="role">
+                            <select name="role" id="role" required>
                                 <option value="admin">Admin</option>
                                 <option value="provider">Proveedor</option>
                                 <option value="consumer">Consumidor</option>
                             </select>
-                            <br><br><br><br><br><br><br>
+                        </div>
+                        <div class="input-container">
                             <input type="submit" value="Registrar">
                         </div>
                     </form>
                 </div>
+
+                <!--Delete Users Mannagment-->
+                <div class="users-list">
+                    <h3>Eliminar Usuario</h3>
+                    <table id="usersTable">
+                        <tr>
+                            <th>Email</th>
+                            <th>Marca</th>
+                            <th>Eliminar</th>
+                        </tr>
+                        <!-- Agrega más filas según sea necesario desde el backend -->
+                    </table>
+                </div>
             </div>
+            
 
             <!--Search product information-->
             <div class="products-by-sku"> 
                 <div>
                     <label for="search">Buscar informacion de producto</label>
-                    <input name="search" type="search" placeholder="Ingrese sku">
+                    <input name="search" type="search" placeholder="Ingrese sku" id="search">
                 </div>
                 <div id="searchedProduct">
                     <!--Data product searched-->
@@ -238,13 +282,13 @@
         <div class="div-from-footer">
             <p class="title-footer">En redes</p>
             <a href="https://www.linkedin.com/company/criteria-dam-workflow-solutions">
-                <img class="footer-reds-logos" src="./assets/icons8-linkedin-rodeado-de-círculo-100.png" alt="linkedin logo" title="linkedin">
+                <img class="footer-reds-logos" src="./assets/linkedin.png" alt="linkedin logo" title="linkedin">
             </a>
             <a href="https://www.instagram.com/marcelocutini/">
-                <img class="footer-reds-logos" src="./assets/icons8-instagram-100.png" alt="insgragram logo" title="instagram">
+                <img class="footer-reds-logos" src="./assets/instagram.png" alt="insgragram logo" title="instagram">
             </a>
             <a href="https://www.youtube.com/channel/UCl6EB9QWjh0uwSeC_tBLq2w">
-                <img class="footer-reds-logos" src="./assets/icons8-youtube-100.png" alt="youtube logo" title="youtube">
+                <img class="footer-reds-logos" src="./assets/youtube.png" alt="youtube logo" title="youtube">
             </a>
         </div>
     </div>
@@ -253,6 +297,7 @@
     <script type="module" src="./functions/fileMannagment/main.js"></script>
     <script type="module" src="./functions/uiMannagment/main.js"></script>
     <script type="module" src="./functions/consumerMannagment/main.js"></script>
-    <script src="./functions/userMannagment/createUser.js"></script>
+    <script type="module" src="./functions/rolesMannagment/main.js"></script>
+    <script type="module" src="./functions/userMannagment/deleteUsers.js"></script>
 </body>
 </html>

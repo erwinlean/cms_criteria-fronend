@@ -5,36 +5,42 @@ const url = "https://vast-ruby-elk-kilt.cyclic.app/api";
 
 const loginForm = document.getElementById('login_form');
 
-loginForm.addEventListener('submit', function(event) {
+loginForm.addEventListener('submit', async function(event) {
     event.preventDefault();
 
     const email = loginForm.elements.email.value;
     const password = loginForm.elements.password.value;
 
-    //console.log('Datos de inicio de sesión:');
-    //console.log('Email:', email);
-    //console.log('Password:', password);
-
-    //Contact to the backend
     const data = {
         email: email,
         password: password
     };
 
-    axios.post(`${url}/users/login`, data)
-    .then(res => {
-        console.log(res)
-        const token = res.data.token;
-        const user = res.data.user;
+    try {
+        const response = await fetch(`${url}/users/login`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+            throw new Error('Login failed');
+        }
+
+        const responseData = await response.json();
+        const token = responseData.token;
+        const user = responseData.user;
         const tokenExpiration = new Date().getTime() + 2 * 60 * 60 * 1000;
 
         localStorage.setItem('token', token);
+        //console.log(localStorage.getItem(token));
         localStorage.setItem('tokenExpiration', tokenExpiration);
         localStorage.setItem('user', JSON.stringify(user));
 
         window.location.href = 'home.html';
-    })
-    .catch(err => {
-        console.error(err);
-    });
+    } catch (error) {
+        alert("Contraseña invalida");
+    };
 });

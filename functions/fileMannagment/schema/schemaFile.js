@@ -1,6 +1,6 @@
 "use strict";
 
-import { transformElement } from "./utils/schemaHelpers.js";
+import { transformElement } from "../utils/schemaHelpers.js";
 
 export function transformData(jsonData) {
     const transformedData = [];

@@ -48,6 +48,9 @@ export function setupProfileForm (){
             if (lastName) {
                 updatedFields.lastName = lastName;
             };
+            if(password){
+                updatedFields.oldPassword = password;
+            }
             if (newPassword) {
                 updatedFields.password = newPassword;
             };
@@ -64,9 +67,10 @@ export function setupProfileForm (){
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`
+                        'Authorization': `Bearer ${token}`,
+                        "User-Email": currentUserEmail
                     },
-                    body: JSON.stringify({ email: currentUserEmail, ...updatedFields }),
+                    body: JSON.stringify({...updatedFields }),
                 });
                 if (response.ok) {
                     const data = await response.json();

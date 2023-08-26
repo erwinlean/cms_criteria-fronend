@@ -14,7 +14,7 @@ export async function getProduct() {
             headers: {
                 'Content-Type': 'application/json',
                 'Authorization': `Bearer ${token}`,
-                'User-role': userRole,
+                'User-role': userRole, // Must be admin or consumer for access the info
             }
         });
 
