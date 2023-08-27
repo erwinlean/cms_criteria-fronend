@@ -237,55 +237,6 @@ input:focus{
     outline: none;
 }
 /*Login*/
-#formulario-login{
-    min-height: 843.3px;
-    display: flex;
-}
-#formulario-login > div{
-    background-color: rgb(51,167,181);
-    width: fit-content;
-    padding: 0px 40px 0px 40px;
-    color: white;
-    display: block;
-    margin-bottom: 120px;
-    box-shadow: none;
-    align-self: center;
-}
-#formulario-login > div > div{
-    height: 20%;
-    gap: 0 !important;
-}
-#login_form > input[type=submit]:nth-child(5){
-    margin-top: 50px;
-    place-self: center;
-    width: fit-content;
-}
-#login_form > input[type=text]:nth-child(2){
-    margin-left: -10px;
-}
-#login_form > input[type=password]:nth-child(4){
-    margin-left: -10px;
-}
-#login_form{
-    display: inline-grid;
-    margin: 0;
-}
-#formulario-login > div > div > h3{
-    align-self: center;
-    font-size: 25px;
-}
-#login_form > input[type=text]:nth-child(2):focus{
-    border-color: white;
-}
-#login_form > input[type=password]:nth-child(4):focus{
-    border-color: white;
-}
-#login_form > input[type=submit]:nth-child(5){
-    color: rgb(51, 167, 181);
-}
-#login_form > label:nth-child(1),#login_form > label:nth-child(3){
-    margin-left: -10px;
-}
 input[type=submit]{
     width: 120px;
     height: 39px;
@@ -327,27 +278,6 @@ select {
 
 .perfil{
     width: 90px;
-}
-/*login*/
-.index{
-    display: flex;
-    min-height: 600px;
-}
-.log-sign{
-    width: 40%;
-    background-color: white;
-}
-.imagen-index{
-    display: flex;
-    align-self: center;
-    width: 100%;
-    background-color: white;
-    min-height: 843.3px;
-    text-align: center;
-    justify-content: center;
-}
-.imagen-index img{
-    width: 40%;
 }
 
 /*Search products*/

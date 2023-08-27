@@ -1,0 +1,96 @@
+/*General*/
+html,body{
+    overflow: hidden !important;
+}
+/*login*/
+.all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    background-image: url("https://cdn.shopify.com/s/files/1/0070/7032/files/trending-products_c8d0d15c-9afc-47e3-9ba2-f7bad0505b9b.png?format=jpg&quality=90&v=1614559651");
+    filter: blur(4px);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+}
+
+.index{
+    border-radius: 5px;
+    filter: none !important;
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(51, 167, 181);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 50%;
+    max-height: 50%;
+    z-index: 2222;
+}
+.imagen-index{
+    max-height: 50%;
+    display: flex;
+    width: 100%;
+    background-color: white;
+    text-align: center;
+    justify-content: center;
+    padding: 0 20px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.imagen-index img{
+    width: inherit;
+}
+/*Form*/
+#formulario-login > div{
+    background-color: rgb(51,167,181);
+    width: fit-content;
+    padding: 0px 40px 0px 40px;
+    color: white;
+    display: block;
+    margin-bottom: 120px;
+    box-shadow: none;
+    align-self: center;
+}
+#formulario-login > div > div{
+    height: 20%;
+    gap: 0 !important;
+}
+#login_form > input[type=submit]:nth-child(5){
+    margin-top: 50px;
+    place-self: center;
+    width: fit-content;
+}
+#login_form > input[type=text]:nth-child(2){
+    margin-left: -10px;
+}
+#login_form > input[type=password]:nth-child(4){
+    margin-left: -10px;
+}
+#login_form{
+    display: inline-grid;
+    margin: 0;
+}
+#formulario-login > div > div > h3{
+    align-self: center;
+    font-size: 25px;
+}
+#login_form > input[type=text]:nth-child(2):focus{
+    filter: drop-shadow(0 0 1px white);
+}
+#login_form > input[type=password]:nth-child(4):focus{
+    filter: drop-shadow(0 0 1px white);
+}
+#login_form > input[type=submit]:nth-child(5){
+    color: rgb(51, 167, 181);
+}
+#login_form > input[type=submit]:nth-child(5):hover{
+    filter: drop-shadow(0 0 1px white);
+}
+#login_form > label:nth-child(1),#login_form > label:nth-child(3){
+    margin-left: -10px;
+}

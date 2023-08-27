@@ -59,8 +59,8 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     max-width: 80%;
     z-index: 2222;
-    overflow-y: auto; /* Add this line to enable vertical scrolling */
-    max-height: 80vh; /* Limit the max height to 80% of the viewport height */
+    overflow-y: auto;
+    max-height: 80vh;
 }
 .close-1 {
     position: absolute;
