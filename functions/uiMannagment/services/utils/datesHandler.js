@@ -10,13 +10,13 @@ export function formatAndDisplayDates(dateString) {
     return formattedDates + " ";
 };
 
-export function formatAndDisplayTwoDates(dates) {
-    console.log(dates)
-    
-    if (dates.tagName === 'SPAN') {
-        // Replace ", " with " "
-        dates.textContent = dates.textContent.replace(/, /g, ' ');
+export function formatDates() {
+    const spans = document.querySelectorAll("#loginDatesList > li > span");
+    if (spans) {
+        spans.forEach((span) => {
+            // Replace ", " with " - " for each span element
+            span.textContent = span.textContent.replace(/, /g, ' - ');
+            span.textContent = span.textContent.replace(/,/g, ' ');
+        });
     };
-
-    return dates;
-}
+};

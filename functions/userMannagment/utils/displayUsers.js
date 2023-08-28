@@ -1,32 +1,35 @@
 "use strict";
 
 import { getUsers } from "./usersRequest.js";
+const user = JSON.parse(localStorage.getItem("user"));
 
 export async function displayUsers() {
-    const table = document.getElementById("usersTable");
-    
-    // Remove all rows except the first one (header)
-    while (table.rows.length > 1) {
-        table.deleteRow(1);
+    if(user.role === "admin"){
+        const table = document.getElementById("usersTable");
+        
+        // Remove all rows except the first one (header)
+        while (table.rows.length > 1) {
+            table.deleteRow(1);
+        };
+
+        const users = await getUsers();
+
+        users.forEach((user) => {
+            const row = table.insertRow();
+            const cell1 = row.insertCell(0);
+            const cell2 = row.insertCell(1);
+            const cell3 = row.insertCell(2);
+
+            cell1.textContent = user.email;
+            cell2.textContent = user.brand;
+
+            const deleteButton = document.createElement("button");
+            deleteButton.className = "delete-button";
+            deleteButton.textContent = "x";
+            deleteButton.setAttribute("data-email", user.email);
+            cell3.appendChild(deleteButton);
+        });
     };
-
-    const users = await getUsers();
-
-    users.forEach((user) => {
-        const row = table.insertRow();
-        const cell1 = row.insertCell(0);
-        const cell2 = row.insertCell(1);
-        const cell3 = row.insertCell(2);
-
-        cell1.textContent = user.email;
-        cell2.textContent = user.brand;
-
-        const deleteButton = document.createElement("button");
-        deleteButton.className = "delete-button";
-        deleteButton.textContent = "x";
-        deleteButton.setAttribute("data-email", user.email);
-        cell3.appendChild(deleteButton);
-    });
 };
 
 export function displayAlert(userEmail, callback) {
@@ -78,4 +81,27 @@ export function displayAlert(userEmail, callback) {
     confirmButton.addEventListener('click', handleConfirmClick);
     exitSpan.addEventListener('click', handleExitClick);
     cancelButton.addEventListener('click', handleCancelClick);
+};
+
+export function displayErrorAlert(message, callback) {
+    const errorModal = document.getElementById('errorModal');
+    const errorModalMessage = document.getElementById('errorModalMessage');
+    const errorModalClose = document.getElementById('errorModalClose');
+    const login = document.querySelector("body > div.index");
+
+    errorModalMessage.innerHTML = `<strong>${message}</strong>`;
+    //login.style.display = 'none';
+    errorModal.style.display = 'block';
+    errorModal.style.zIndex = "3724"
+
+    function handleCloseClick() {
+        errorModal.style.display = 'none';
+        //login.style.display = 'flex';
+        if (callback) {
+            callback();
+        };
+        errorModalClose.removeEventListener('click', handleCloseClick);
+    };
+
+    errorModalClose.addEventListener('click', handleCloseClick);
 };

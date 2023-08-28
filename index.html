@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./style/body.css">
     <link rel="stylesheet" href="./style/login.css">
     <link rel="stylesheet" href="./style/footer.css">
+    <link rel="stylesheet" href="./style/modal.css">
 </head>
 <body>
     <div class="all"></div>
@@ -44,35 +45,13 @@
             </div>
         </div>
             
-        <!-- footer -->
-        <!--<div class="footer">
-            <div class="div-from-footer">
-                <a href="https://criteria.online/" target="_blank">
-                    <img class="footer-logo-criteria" src="./assets/criteria-iso-blanco.svg" alt="criteria logo blanco" title="criteria logo">
-                </a>
-            </div>
-            <div class="div-from-footer">
-                <p class="title-footer">Contacto</p>
-                <p class="contact-celphone">+54 911 6714 3658</p>
-                <a href = "mailto:mcutini@criteria.online">mcutini@criteria.online</a>
-                <p class="contact-celphone">+54 223 6049176</p>
-                <a href = "mailto:emarte@criteria.online">emarte@criteria.online</a>
-            </div>
-            <div class="div-from-footer">
-                <p class="title-footer">En redes</p>
-                <a href="https://www.linkedin.com/company/criteria-dam-workflow-solutions">
-                    <img class="footer-reds-logos" src="./assets/linkedin.png" alt="linkedin logo" title="linkedin">
-                </a>
-                <a href="https://www.instagram.com/marcelocutini/">
-                    <img class="footer-reds-logos" src="./assets/instagram.png" alt="insgragram logo" title="instagram">
-                </a>
-                <a href="https://www.youtube.com/channel/UCl6EB9QWjh0uwSeC_tBLq2w">
-                    <img class="footer-reds-logos" src="./assets/youtube.png" alt="youtube logo" title="youtube">
-                </a>
+        <div id="errorModal" class="modal">
+            <div class="modal-content">
+                <span id="errorModalClose" class="close-1">&times;</span>
+                <p id="errorModalMessage"></p>
             </div>
         </div>
-        -->
 
-    <script src="./functions/userMannagment/login.js"></script>
+    <script type="module" src="./functions/userMannagment/login.js"></script>
 </body>
 </html>

@@ -124,3 +124,42 @@
 #confirmDelete:hover, #cancelDelete:hover{
     background-color: white;
 }
+/*Error login*/
+#errorModal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1;
+}
+#errorModal .modal-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 40px 20px 20px 20px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+    z-index: 2222;
+}
+#errorModal #errorModalClose {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 30px;
+    font-weight: bolder;
+}
+#errorModal #errorModalClose:hover {
+    color: rgb(51, 167, 181);
+}
+#errorModal #errorModalMessage {
+    font-size: 18px;
+    padding: 20px;
+    text-align: center;
+}

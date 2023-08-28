@@ -8,11 +8,11 @@ const deleteUrl = "https://vast-ruby-elk-kilt.cyclic.app/api/users/delete";
 
 const user = JSON.parse(localStorage.getItem("user"));
 const token = localStorage.getItem("token");
-const currentUser = user.email
 
 // Get
 export async function getUsers() {
-    console.log(currentUser)
+    const currentUser = user.email
+
     try {
         const response = await fetch(getUrl, {
             method: "GET",
@@ -21,13 +21,11 @@ export async function getUsers() {
                 "User-Email": currentUser
             },
         });
-
         if (!response.ok) {
             throw new Error(`Failed to fetch users: ${response.status}`);
         };
-
         const data = await response.json();
-        console.log(data)
+
         return await data;
     } catch (error) {
         console.error("Error fetching users:", error);
@@ -36,6 +34,8 @@ export async function getUsers() {
 
 // Delete
 export async function deleteUser(emailToDelete) {
+    const currentUser = user.email
+
     try {
         const response = await fetch(`${deleteUrl}/${emailToDelete}`, {
             method: "DELETE",

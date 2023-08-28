@@ -1,6 +1,8 @@
 "use strict";
 
 const url = "https://vast-ruby-elk-kilt.cyclic.app/api";
+
+import { displayErrorAlert } from "./utils/displayUsers.js"
 //const url = "http://localhost:8080/api";
 
 const loginForm = document.getElementById('login_form');
@@ -41,6 +43,6 @@ loginForm.addEventListener('submit', async function(event) {
 
         window.location.href = 'home.html';
     } catch (error) {
-        alert("Contraseña invalida");
+        displayErrorAlert("Error, usuario o contraseña incorrectos.");
     };
 });

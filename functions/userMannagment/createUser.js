@@ -25,12 +25,13 @@ registerForm.addEventListener('submit', function(event) {
         return;
     };
 
+    /* Schema  data from backend match to frontend data form */
     const data = {
         name: name,
-        apellido: apellido,
+        lastName: apellido,
         email: email,
         password: password,
-        empresa: empresa,
+        brand: empresa,
         role: role
     };
 
