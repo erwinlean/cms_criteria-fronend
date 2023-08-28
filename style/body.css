@@ -130,8 +130,8 @@ table{
 	vertical-align: middle;
 }
 thead {
-	background-color: rgb(255,203,112);
-	color: black;
+	background-color: rgb(51, 167, 181);
+	color: white;
 	font-size: 0.875rem;
 	text-transform: uppercase;
 	letter-spacing: 2px;

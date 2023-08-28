@@ -8,8 +8,9 @@
     <!--Favicon-->
     <link rel="icon" href="./assets/criteriaIco.ico" type="image/x-icon">
 
-    <!--cdn archives XLSX-->
+    <!--cdn archives XLSX & PDF-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
     <!--web icon-->
     <link rel="stylesheet" href="">
@@ -127,6 +128,13 @@
                         <button id="confirmDelete">Confirmar</button>
                         <button id="cancelDelete">Cancelar</button>
                     </div>
+                </div>
+            </div>
+            <!-- Add this HTML for the image modal -->
+            <div id="imgModal" class="modal">
+                <div>
+                    <span class="close-img" id="closeModalImg">&times;</span>
+                    <img class="modal-content-img" id="modalImage">
                 </div>
             </div>
 
@@ -259,8 +267,18 @@
                     <label for="search">Buscar informacion de producto</label>
                     <input name="search" type="search" placeholder="Ingrese sku" id="search">
                 </div>
+                <div>
+                    <ul>
+                        <li>
+                            <button id="selecAllProducts">Seleccionar todo</button>
+                        </li>
+                        <li>
+                            <button id="downloadButton" disabled>Descargar productos seleccionados</button>
+                        </li>
+                    </ul>
+                </div>
                 <div id="searchedProduct">
-                    <!--Data product searched-->
+                    <!--Data product searched (products came from the backend api connected with the PIM)-->
                 </div>
             </div>
         </div>

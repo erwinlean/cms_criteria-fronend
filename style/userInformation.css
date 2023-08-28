@@ -1,7 +1,7 @@
 /* General */
 .user{
     position: relative;
-    width: 90px;
+    width: 80px;
     display: block;
     padding: 5px 25px;
     border-right: 1px solid rgb(255,203,112);
@@ -20,13 +20,13 @@
     padding-bottom: 5px !important;
 }
 .user img {
-    width: 50px;
+    width: 40px;
 }
 body > div.body-section > div.user > div > div.search-products > button > img{
-    width: 55px;
+    width: 45px;
 }
 body > div.body-section > div.user > div > div.config > button > img{
-    width: 60px;
+    width: 50px;
 }
 .user img:hover {
     filter: drop-shadow(0 0 2px rgb(51,167,181));
@@ -92,6 +92,7 @@ body > div.body-section > div.info-section > div.logins-info > h5{
     width: 250px;
 }
 /* files */
-#filesTable > tbody > tr:nth-child(1) > td:nth-child(5) > span:hover{
-    color: rgb(255, 203, 112) !important;
+#filesTable > tbody > tr > td > span:hover{
+    color: black !important;
+    filter: drop-shadow(0 0 2px rgb(51,167,181));
 }

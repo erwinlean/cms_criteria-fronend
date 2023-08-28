@@ -9,7 +9,7 @@ html,body{
     align-items: center;
     height: 100vh;
     overflow: hidden;
-    background-image: url("https://cdn.shopify.com/s/files/1/0070/7032/files/trending-products_c8d0d15c-9afc-47e3-9ba2-f7bad0505b9b.png?format=jpg&quality=90&v=1614559651");
+    background-image: url("../assets/indexBackground.jpg");
     filter: blur(4px);
     background-size: cover;
     background-repeat: no-repeat;
@@ -58,14 +58,18 @@ html,body{
 #formulario-login > div > div{
     height: 20%;
     gap: 0 !important;
+    margin-top: 30px;
 }
 #login_form > input[type=submit]:nth-child(5){
-    margin-top: 100px;
+    margin-top: 30px;
     place-self: center;
     width: fit-content;
 }
 #login_form > input[type=text]:nth-child(2){
     margin-left: -10px;
+}
+#login_form > input[type=text]:nth-child(2)::placeholder,#login_form > input[type=password]:nth-child(4)::placeholder{
+    font-size: 12px;
 }
 #login_form > input[type=password]:nth-child(4){
     margin-left: -10px;

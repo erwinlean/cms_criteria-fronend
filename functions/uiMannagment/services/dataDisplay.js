@@ -9,9 +9,8 @@ export function loginsDisplay(loginsData) {
     const loggedInUser = JSON.parse(localStorage.getItem("user"));
     const isAdmin = loggedInUser.role === "admin";
 
-
     if(loggedInUser.role === "admin"){
-        loginsData.loginDates.forEach((userData) => {
+        loginsData.allUserData.forEach((userData) => {
             const email = isAdmin ? userData.email : userData.email || loggedInUser.email;
             const dates = isAdmin ? userData.loginDates : (userData || []);
             const userItem = document.createElement("li");

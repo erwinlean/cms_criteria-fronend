@@ -4,13 +4,16 @@ export function filterProducts(searchTerm) {
     const productDivs = document.querySelectorAll("#searchedProduct > div");
 
     productDivs.forEach(productDiv => {
-        const productData = productDiv.querySelector('h4').textContent.toLowerCase();
-        // Add more information for search if needed
+        const productDataElements = productDiv.querySelectorAll(".product-data");
 
-        if (productData.includes(searchTerm.toLowerCase())) {
-            productDiv.style.display = 'block';
+        const productDataText = Array.from(productDataElements)
+            .map(element => element.textContent.toLowerCase())
+            .join(" ");
+
+        if (productDataText.includes(searchTerm.toLowerCase())) {
+            productDiv.style.display = "block";
         } else {
-            productDiv.style.display = 'none';
+            productDiv.style.display = "none";
         };
     });
 };
