@@ -33,75 +33,45 @@ export async function displayUsers() {
 };
 
 export function displayAlert(userEmail, callback) {
-    const modal = document.getElementById('deleteModal');
-    const confirmButton = document.getElementById('confirmDelete');
-    const cancelButton = document.getElementById('cancelDelete');
-    const exitSpan = document.querySelector("#deleteModal > div > span");
-
-    // Set the text in the modal
-    const modalContent = modal.querySelector('.modal-content');
-    modalContent.querySelector('p').textContent = `¿Desea eliminar a ${userEmail}?`;
-
-    // Show the modal
-    modal.style.display = 'block';
-
-    // Define event handler functions
-    function handleConfirmClick() {
-        modal.style.display = 'none';
-        if (callback) {
+    Swal.fire({
+        title: 'Confirmar Eliminacion',
+        text: `¿Desea eliminar a ${userEmail}?`,
+        icon: 'warning',
+        iconColor: "red",
+        color:"rgb(51,167,181)",
+        showCancelButton: true,
+        confirmButtonColor: '#d33',
+        cancelButtonColor: 'rgb(51,167,181)',
+        confirmButtonText: 'Sí',
+        cancelButtonText: 'No',
+    }).then((result) => {
+        if (result.isConfirmed) {
+            if (callback) {
             callback(true);
+            }
+        } else {
+            if (callback) {
+                callback(false);
+            };
         };
-        // Remove event listeners
-        confirmButton.removeEventListener('click', handleConfirmClick);
-        cancelButton.removeEventListener('click', handleCancelClick);
-        exitSpan.removeEventListener('click', handleExitClick);
-    };
-    function handleCancelClick() {
-        modal.style.display = 'none';
-        if (callback) {
-            callback(false);
-        };
-        // Remove event listeners
-        confirmButton.removeEventListener('click', handleConfirmClick);
-        cancelButton.removeEventListener('click', handleCancelClick);
-        exitSpan.removeEventListener('click', handleExitClick);
-    };
-    function handleExitClick() {
-        modal.style.display = 'none';
-        if (callback) {
-            callback(false);
-        };
-        // Remove event listeners
-        confirmButton.removeEventListener('click', handleConfirmClick);
-        cancelButton.removeEventListener('click', handleCancelClick);
-        exitSpan.removeEventListener('click', handleExitClick);
-    };
-
-    // Add event listeners for confirm and cancel buttons
-    confirmButton.addEventListener('click', handleConfirmClick);
-    exitSpan.addEventListener('click', handleExitClick);
-    cancelButton.addEventListener('click', handleCancelClick);
+    });
 };
 
 export function displayErrorAlert(message, callback) {
-    const errorModal = document.getElementById('errorModal');
-    const errorModalMessage = document.getElementById('errorModalMessage');
-    const errorModalClose = document.getElementById('errorModalClose');
-    const login = document.querySelector("body > div.index");
-
-    errorModalMessage.innerHTML = `<strong>${message}</strong>`;
-    //login.style.display = 'none';
-    errorModal.style.display = 'block';
-    errorModal.style.zIndex = "3724"
-
-    function handleCloseClick() {
-        errorModal.style.display = 'none';
-        //login.style.display = 'flex';
-        if (callback) {
+    Swal.fire({
+        icon: "error",
+        iconColor: "rgb(240,128,104)",//"rgb(51, 167, 181)",
+        title: "Error",
+        text: message,
+        confirmButtonText: "OK",
+        color: "rgb(51, 167, 181)",
+        confirmButtonColor: "rgb(51, 167, 181)",
+        customClass: {
+            popup: "my-custom-popup-class",
+        },
+    }).then((result) => {
+        if (result.isConfirmed && callback) {
             callback();
         };
-        errorModalClose.removeEventListener('click', handleCloseClick);
-    };
-
-    errorModalClose.addEventListener('click', handleCloseClick);
+    });
 };

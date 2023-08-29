@@ -1,9 +1,9 @@
 /* General */
 .user{
     position: relative;
-    width: 80px;
+    width: 115px;
     display: block;
-    padding: 5px 25px;
+    padding: 5px 10px;
     border-right: 1px solid rgb(255,203,112);
 }
 .infor_pers{
@@ -17,7 +17,11 @@
     background-color: transparent;
 }
 .infor_pers > div{
-    padding-bottom: 5px !important;
+    padding-bottom: 25px !important;
+}
+body > div.body-section > div.user > div > div > button > p{
+    margin: 0;
+    padding: 0;
 }
 .user img {
     width: 40px;
@@ -53,11 +57,12 @@ body > div.body-section > div.user > div.open-left_section{
     padding: 10px;
 }
 body > div.body-section > div.user > div.open-left_section > button{
-    padding: 0;
-    margin: 0;
+    padding: 10px;
+    margin: 15px;
 }
 .upload,.logins,.files,.create-user, .search-products{
     padding: 10px 0;
+    height: 70px;
 }
 .config{
     padding: 175px 0;
@@ -66,6 +71,47 @@ body > div.body-section > div.user > div.open-left_section > button{
     justify-content: center;
 }
 /*Logins list style*/
+#loginDatesList{
+    padding: 8px 10px;
+    background-color: white;
+    box-shadow: 0 0 5px #ccc;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    border-bottom-right-radius: 5px !important;
+    border-bottom-left-radius: 5px !important;
+}
+body > div.body-section > div.info-section > div.logins-info > ul.tipe{
+    box-shadow: 0 -5px 5px -5px #ccc, 5px 0 5px -5px #ccc, -5px 0 5px -5px #ccc;
+    margin-top: 50px;
+    margin-bottom: 0;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+    line-height: 1.5px;
+    display: flex;
+    width: auto;
+    height: 35px;
+    position: relative;
+    background-color: rgb(51, 167, 181);
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    justify-content: space-between;
+    font-weight: bolder;
+    font-size: 17px;
+}
+body > div.body-section > div.info-section > div.logins-info > ul.tipe > li:nth-child(1),body > div.body-section > div.info-section > div.logins-info > ul.tipe > li:nth-child(2){
+    padding-top: 20px;
+    background-color: rgb(51, 167, 181);
+}
+#loginDatesList > li:nth-child(1){
+    border-top: none !important;
+}
+body > div.body-section > div.info-section > div.logins-info > ul.tipe > li:nth-child(2){
+    padding-right: 110px;
+    border-top-right-radius: 5px;
+}
 body > div.body-section > div.info-section > div.logins-info{
     width: 50vw;
     padding: auto;
@@ -76,9 +122,10 @@ body > div.body-section > div.info-section > div.logins-info > h5{
     font-size: 18px;
 }
 .login-item {
-    border-top: 1px solid rgb(255, 203, 112);
+    border-top: 2px solid rgb(51,167,181);
     padding: 8px 0;
     display: flex;
+    min-width: auto;
     justify-content: space-between;
     align-items: center;
 }
@@ -92,7 +139,20 @@ body > div.body-section > div.info-section > div.logins-info > h5{
     width: 250px;
 }
 /* files */
+#filesTable > tbody > tr > td> span{
+    position: relative;
+    display: flex;
+    margin: 5px 0;
+    width: 80px;
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    padding: 7px 10px;
+    background-color: rgb(51, 167, 181);
+    color: white !important;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+}
 #filesTable > tbody > tr > td > span:hover{
-    color: black !important;
-    filter: drop-shadow(0 0 2px rgb(51,167,181));
+    background-color: rgb(43, 139, 149);
 }

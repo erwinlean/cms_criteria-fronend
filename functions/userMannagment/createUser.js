@@ -4,6 +4,7 @@ import { displayUsers } from "../userMannagment/utils/displayUsers.js"
 
 const registerForm = document.getElementById('register_form');
 const url ="https://vast-ruby-elk-kilt.cyclic.app/api/users/create";
+//const url ="http://localhost:8080/api/users/create";
 
 registerForm.addEventListener('submit', function(event) {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -34,9 +35,6 @@ registerForm.addEventListener('submit', function(event) {
         brand: empresa,
         role: role
     };
-
-    console.log(data)
-    console.log(currentUserEmail)
 
     fetch(`${url}`, {
         method: 'POST',

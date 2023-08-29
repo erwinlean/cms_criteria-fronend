@@ -8,9 +8,10 @@
     <!--Favicon-->
     <link rel="icon" href="./assets/criteriaIco.ico" type="image/x-icon">
 
-    <!--cdn archives XLSX & PDF-->
+    <!--cdn archives XLSX, PDF & Alerts-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
     <!--web icon-->
     <link rel="stylesheet" href="">
@@ -141,6 +142,10 @@
             <!-- logins from backend (data)-->
             <div class="logins-info"> 
                 <h5>Conexiones:</h5>
+                <ul class="tipe">
+                    <li>Usuario</li>
+                    <li>Conexiones</li>
+                </ul>
                 <ul id="loginDatesList"></ul>
             </div>
 
@@ -265,7 +270,7 @@
             <div class="products-by-sku"> 
                 <div>
                     <label for="search">Buscar informacion de producto</label>
-                    <input name="search" type="search" placeholder="Ingrese sku" id="search">
+                    <input name="search" type="search" placeholder="Busque su producto" id="search">
                 </div>
                 <div>
                     <ul>

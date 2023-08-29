@@ -3,16 +3,15 @@
 import { userData } from "../userMannagment/utils/userData.js";
 import { welcomeUser } from "./utils/userWelcome.js";
 
-export function setupProfileForm (){
-
+export function setupProfileForm () {
     welcomeUser();
 
-    //const url ="https://vast-ruby-elk-kilt.cyclic.app/api";
-    const url = "http://localhost:8080/api";
+    const url = "https://vast-ruby-elk-kilt.cyclic.app/api";
+    // const url = "http://localhost:8080/api";
 
     const formUpdateUser = document.getElementById('user_information');
-    const user = userData();
-    
+    let user = userData();
+
     // perfil.html
     if (formUpdateUser) {
         formUpdateUser.elements.name.placeholder = user.name;
@@ -24,7 +23,7 @@ export function setupProfileForm (){
         formUpdateUser.elements.empresa.placeholder = user.brand;
 
         // Put/Update user information
-        formUpdateUser.addEventListener('submit', async function(event) {
+        formUpdateUser.addEventListener('submit', async function (event) {
             event.preventDefault();
 
             const form = event.target;
@@ -48,10 +47,10 @@ export function setupProfileForm (){
             if (lastName) {
                 updatedFields.lastName = lastName;
             };
-            if(email){
+            if (email) {
                 updatedFields.email = email;
             }
-            if(password){
+            if (password) {
                 updatedFields.oldPassword = password;
             }
             if (newPassword) {
@@ -61,45 +60,64 @@ export function setupProfileForm (){
                 updatedFields.brand = brand;
             };
 
-            console.log(updatedFields)
-            try {
-                const token = localStorage.getItem('token');
-                const currentUser = JSON.parse(localStorage.getItem('user'));
-                const currentUserEmail = currentUser.email;
+            // Use SweetAlert2 to display a confirmation dialog
+            Swal.fire({
+                title: 'Confirmar cambios',
+                text: '¿Seguro que desea actualizar los cambios?',
+                icon: 'question',
+                iconColor: "rgb(51, 167, 181)",
+                color: "rgb(51, 167, 181)",
+                showCancelButton: true,
+                confirmButtonText: 'Confirmar',
+                confirmButtonColor: "rgb(51, 167, 181)",
+                cancelButtonText: 'Cancelar',
+                cancelButtonColor: "rgb(240,128,104)"
+            }).then(async (result) => {
+                if (result.isConfirmed) {
+                    try {
+                        const token = localStorage.getItem('token');
+                        const currentUser = JSON.parse(localStorage.getItem('user'));
+                        const currentUserEmail = currentUser.email;
 
-                const response = await fetch(`${url}/users/update`, {
-                    method: 'PUT',
-                    headers: {
-                        'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${token}`,
-                        "User-Email": currentUserEmail
-                    },
-                    body: JSON.stringify({...updatedFields }),
-                });
-                if (response.ok) {
-                    const data = await response.json();
+                        const response = await fetch(`${url}/users/update`, {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json',
+                                'Authorization': `Bearer ${token}`,
+                                "User-Email": currentUserEmail
+                            },
+                            body: JSON.stringify({ ...updatedFields }),
+                        });
+                        if (response.ok) {
+                            const data = await response.json();
 
-                    // Update localStorage with the new information on the DOM
-                    const currentUser = JSON.parse(localStorage.getItem('user'));
-                    const updatedUser = { ...currentUser, ...data };
-                    console.log(updatedUser);
-                    localStorage.setItem('user', JSON.stringify(updatedUser));   
+                            // Update localStorage with the new information on the DOM
+                            const currentUser = JSON.parse(localStorage.getItem('user'));
+                            const updatedUser = { ...currentUser, ...data };
 
-                    user = JSON.parse(localStorage.getItem('user'));
-                    formUpdateUser.elements.name.placeholder = user.name;
-                    formUpdateUser.elements.apellido.placeholder = user.lastName;
-                    formUpdateUser.elements.email.placeholder = user.email;
-                    formUpdateUser.elements.password.placeholder = 'Ingrese su password actual';
-                    formUpdateUser.elements['new-password'].placeholder = 'Ingrese su nuevo password';
-                    formUpdateUser.elements['re-enter_new_password'].placeholder = 'Confirme su nuevo password';
-                    formUpdateUser.elements.empresa.placeholder = user.brand;
-                } else {
-                    const errorData = await response.json();
-                    console.log(errorData);
-                };
-            } catch (error) {
-                console.log(error);
-            };        
+                            localStorage.setItem('user', JSON.stringify(updatedUser));
+
+                            user = JSON.parse(localStorage.getItem('user'));
+                            formUpdateUser.elements.name.placeholder = user.name;
+                            formUpdateUser.elements.apellido.placeholder = user.lastName;
+                            formUpdateUser.elements.email.placeholder = user.email;
+                            formUpdateUser.elements.password.placeholder = 'Ingrese su password actual';
+                            formUpdateUser.elements['new-password'].placeholder = 'Ingrese su nuevo password';
+                            formUpdateUser.elements['re-enter_new_password'].placeholder = 'Confirme su nuevo password';
+                            formUpdateUser.elements.empresa.placeholder = user.brand;
+
+                            Swal.fire('Updated!', 'Your profile has been updated.', 'success');
+                        } else {
+                            const errorData = await response.json();
+                            console.log(errorData);
+                            Swal.fire('Error', 'An error occurred while updating your profile.', 'error');
+                        };
+                    } catch (error) {
+                        console.log(error);
+                        Swal.fire('Error', 'An error occurred while updating your profile.', 'error');
+                    };
+                }
+            });
         });
     };
 };

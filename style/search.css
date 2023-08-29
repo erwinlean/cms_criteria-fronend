@@ -25,15 +25,15 @@ body > div.body-section > div.info-section > div.products-by-sku > div:nth-child
 }
 #selecAllProducts, #downloadButton{
     padding: 10px;
-    border: 1px solid rgb(51,167,181);
-    background-color: white;
+    color: white !important;
+    background-color: rgb(51,167,181);
     border-radius: 5px;
     margin: 0 10px;
     color: rgb(51,167,181);
+    border: 3px solid #ccc;
 }
 #selecAllProducts:hover, #downloadButton:hover{
-    background-color: #f5f5f5;
-    filter: drop-shadow(0 0 3px rgb(51,167,181));
+    background-color: rgb(43, 139, 149);
 }
 #selecAllProducts:active, #downloadButton:active{
     background-color: rgb(51,167,181);
@@ -42,22 +42,37 @@ body > div.body-section > div.info-section > div.products-by-sku > div:nth-child
 /* Products */
 #searchedProduct {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Responsive grid with minimum column width */
     grid-gap: 20px;
     justify-content: center;
     align-items: start;
     margin-top: 25px;
+    position: relative;
 }
 .product-list {
-    width: 100%;
     box-sizing: border-box;
     padding: 10px;
     border-radius: 5px;
     border: 3px solid #ccc;
-    overflow-y: scroll;
-    height: 340px;
-    scrollbar-width: thin;
-    scrollbar-color: #999 transparent;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.product-list img {
+    max-height: 100%;
+    width: auto;
+    align-self: center; 
+    margin-bottom: 10px;
+}
+.product-data {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+.sku-product {
+    font-weight: bold;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
 }
 .product-list:hover {
     border-color: rgb(51,167,181);
@@ -72,6 +87,7 @@ body > div.body-section > div.info-section > div.products-by-sku > div:nth-child
 h4.sku-product {
     color: rgb(51,167,181);
     font-size: 22px !important;
+    margin-top: -5px;
 }
 h4.product-data {
     font-weight: 500;
@@ -95,10 +111,28 @@ h4.product-data {
     background-color: rgb(51,167,181);
 }
 /*Images*/
+#closeModalImg{
+    top: 1px;
+    position: relative;
+    display: flex;
+    color: black;
+    font-weight: bolder;
+    font-size: 25px;
+    cursor: pointer;
+}
+#closeModalImg:hover{
+    color: rgb(51,167,181);
+}
+#imgModal > div{
+    align-self: center;
+    margin: auto;
+    padding: 15px 10px 10px 10px;
+    background-color: white;
+}
 #searchedProduct > div > img {
     display: block;
     margin: 0 auto;
-    width: 150px;
+    width: 180px;
     border: 1px solid #ccc;
     border-radius: 10px;
     filter: drop-shadow(0 0 2px#ccc);
@@ -127,12 +161,9 @@ h4.product-data {
 .custom-checkbox {
     width: 30px;
     height: 14px;
-    border: 2px solid #ccc;
     border-radius: 5px;
-    padding: 8px 4.5px;
-    margin-left: -28px;
+    padding: 8px 1px;
     display: inline-block;
-    position: relative;
 }
 .custom-checkbox::after {
     content: "\2713"; /* Checkmark symbol */

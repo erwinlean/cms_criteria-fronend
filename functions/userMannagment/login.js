@@ -43,6 +43,6 @@ loginForm.addEventListener('submit', async function(event) {
 
         window.location.href = 'home.html';
     } catch (error) {
-        displayErrorAlert("Error, usuario o contraseña incorrectos.");
+        displayErrorAlert("Usuario o contraseña incorrectos.");
     };
 });

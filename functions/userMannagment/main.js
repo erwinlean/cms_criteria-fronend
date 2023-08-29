@@ -15,6 +15,9 @@ const currentPage = window.location.pathname;
 if (currentPage === '/home.html') {
     welcomeUser();
 } else if (currentPage === '/perfil.html') {
+    welcomeUser();
+
+    /* Update user information function */
     setupProfileForm();
 };
 

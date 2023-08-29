@@ -29,7 +29,7 @@ export function loginsDisplay(loginsData) {
             } else {
                 const firstTwoDates = formatAndDisplayDates(dates.slice(0, 1).join(", "));
                 const verMasButton = document.createElement("button");
-                verMasButton.textContent = "[ Ver Más ]";
+                verMasButton.textContent = "Ver Más";
         
                 verMasButton.addEventListener("click", () => {
                     const modalDates = document.getElementById("modal-dates-1");    
@@ -133,7 +133,7 @@ export function filesDisplay(filesData) {
                 return `${key}: ${value[0].data}`;
             }).join("<br>");
         
-            dataCell.innerHTML = `Identifier: ${item.identifier},<br> Attributes: ${attributeText}${separatorStyle()}<span class="more-data" style="cursor: pointer; color: rgb(51,167,181);">[ Ver más ]</span>`;
+            dataCell.innerHTML = `Identifier: ${item.identifier},<br> Attributes: ${attributeText}${separatorStyle()}<span class="more-data" style="cursor: pointer; color: rgb(51,167,181);">Ver más</span>`;
     
             const moreDataSpan = dataCell.querySelector(".more-data");
             moreDataSpan.addEventListener("click", () => {

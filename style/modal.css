@@ -74,17 +74,22 @@
     color: rgb(51, 167, 181);
 }
 #loginDatesList > li > span > button{
-    border: none;
-    background-color: transparent;
-    color: rgb(51, 167, 181);
+    border: 3px solid #ccc;
+    border-radius: 5px;
+    padding: 7px 10px;
+    background-color: rgb(51, 167, 181);
+    color: white;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
 }
 #loginDatesList > li > span > button:hover{
-    color: rgb(255,203,112);
+    background-color: rgb(43, 139, 149);
 }
 #modal-dates-1{
     font-size: 21px;
     padding: 20px;
-    border: 1px solid black;
+    border: 3px solid rgb(51, 167, 181);
     border-radius: 5px;
     width: 300px;
     text-align: center;
@@ -164,44 +169,10 @@
     text-align: center;
 }
 /*Image modal*/
-#imgModal {
-    display: none;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.7);
-    z-index: 1;
-}
-#imgModal > div {
-    box-shadow: grey 0px 2px 10px 0px;
-    border-radius: 5px;
-    position: relative;
-    padding: 15px;
-    background-color: white;
-    text-align: center;
-    max-width: 80%;
-}
-.close-img {
-    position: absolute;
-    top: 0;
-    right: 0;
-    font-size: 30px;
-    font-weight: bolder;
-    padding: 15px;
-    font-size: 35px;
-    cursor: pointer;
-    color: black;
-    z-index: 2;
-}
-.close-img:hover {
-    color: rgb(51, 167, 181);
-}
-.modal-content-img {
-    max-width: 100%;
-    max-height: 80vh;
-    object-fit: contain;
+/* Define a custom CSS class with a higher z-index */
+.my-custom-popup-class {
+    z-index: 9999;
+}  
+body > div.swal2-container.swal2-center.swal2-backdrop-show{
+    z-index: 9999;
 }

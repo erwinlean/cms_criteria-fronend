@@ -49,9 +49,6 @@ export async function deleteUser(emailToDelete) {
             throw new Error(`Failed to delete user: ${response.status}`);
         };
 
-        console.log(currentUser)
-        console.log(emailToDelete)
-
         if(currentUser == emailToDelete){
             logOut();
         };
