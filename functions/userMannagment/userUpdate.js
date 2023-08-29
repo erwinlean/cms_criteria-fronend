@@ -7,12 +7,12 @@ export function setupProfileForm (){
 
     welcomeUser();
 
-    const url ="https://vast-ruby-elk-kilt.cyclic.app/api";
-    //const url = "http://localhost:8080/api";
+    //const url ="https://vast-ruby-elk-kilt.cyclic.app/api";
+    const url = "http://localhost:8080/api";
 
     const formUpdateUser = document.getElementById('user_information');
     const user = userData();
-
+    
     // perfil.html
     if (formUpdateUser) {
         formUpdateUser.elements.name.placeholder = user.name;
@@ -48,6 +48,9 @@ export function setupProfileForm (){
             if (lastName) {
                 updatedFields.lastName = lastName;
             };
+            if(email){
+                updatedFields.email = email;
+            }
             if(password){
                 updatedFields.oldPassword = password;
             }
@@ -58,6 +61,7 @@ export function setupProfileForm (){
                 updatedFields.brand = brand;
             };
 
+            console.log(updatedFields)
             try {
                 const token = localStorage.getItem('token');
                 const currentUser = JSON.parse(localStorage.getItem('user'));

@@ -4,6 +4,15 @@ html, body{
     background-color: rgb(51, 167, 181);
     display: contents;
 }
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgb(51, 167, 181);
+}
+::-webkit-scrollbar-track {
+    background-color: white;
+}
 body > div.body-section > div.info-section > div.body-section > div.info-section > p:nth-child(3){
     width: 90%;
 }
@@ -215,7 +224,7 @@ th, td {
 }
 form{
     display: flex;
-    gap: 20px;
+    gap: 12px;
     max-width: 600px;
     width: 100%;
     margin: 20px;
@@ -293,4 +302,9 @@ body > div.body-section > div.info-section > div.products-by-sku{
     width: fit-content;
     margin: 0 auto;
     max-height: 300px;
+}
+/*Extra*/
+body > div.header > div.header-icons > a:active{
+    filter: drop-shadow(0 0 5px rgb(51,167,181));
+    color: rgb(51, 167, 181) !important;
 }

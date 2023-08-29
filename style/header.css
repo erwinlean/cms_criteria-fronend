@@ -21,7 +21,9 @@ cursor: pointer;
     align-items: center;
 }
 body > div.header > div > a{
+    margin-top: 5px;
     width: fit-content;
+    text-decoration: none;
     margin-right: 15px;
 }
 body > div.header > div > a > img{

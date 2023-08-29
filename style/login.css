@@ -1,6 +1,28 @@
 /*General*/
-html,body{
+html, body {
     overflow: hidden !important;
+    position: relative;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: transparent;
+}
+body::before {
+    content: "";
+    background-image: url("../assets/background.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    filter: blur(2px);
+    z-index: -1;
 }
 /*login*/
 .all {
@@ -9,14 +31,13 @@ html,body{
     align-items: center;
     height: 100vh;
     overflow: hidden;
-    background-image: url("../assets/indexBackground.jpg");
-    filter: blur(4px);
-    background-size: cover;
+    background-size:contain;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center center;
 }
 .index{
+    min-height: 450px;
     border-radius: 5px;
     filter: none !important;
     display: flex;
@@ -31,7 +52,7 @@ html,body{
     z-index: 2222;
 }
 .imagen-index{
-    max-height: 50%;
+    height: auto;
     display: flex;
     width: 100%;
     background-color: white;
@@ -61,7 +82,7 @@ html,body{
     margin-top: 30px;
 }
 #login_form > input[type=submit]:nth-child(5){
-    margin-top: 30px;
+    margin-top: 40px;
     place-self: center;
     width: fit-content;
 }
@@ -78,6 +99,13 @@ html,body{
     display: inline-grid;
     margin: 0;
 }
+#formulario-login > div > div{
+    height: 20%;
+    gap: 0 !important;
+    position: relative;
+    margin-top: 30px;
+    top: -25px;
+}
 #formulario-login > div > div > h3{
     align-self: center;
     font-size: 25px;
@@ -92,6 +120,7 @@ html,body{
 }
 #login_form > input[type=submit]:nth-child(5){
     color: rgb(51, 167, 181);
+    font-size: 12px;
 }
 #login_form > input[type=submit]:nth-child(5):hover{
     filter: drop-shadow(0 0 1px white);
