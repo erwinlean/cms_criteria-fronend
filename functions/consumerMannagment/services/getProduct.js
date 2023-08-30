@@ -24,9 +24,7 @@ export async function getProduct() {
             return res
         } else {
             const errorData = await response.json();
-            console.log('Error al Obteniendo los productos:', errorData);
         };
     } catch (error) {
-        console.log('Error en la solicitud:', error);
     };
 };

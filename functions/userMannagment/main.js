@@ -22,3 +22,4 @@ if (currentPage === '/home.html') {
 };
 
 tokenHandler();
+setupProfileForm();

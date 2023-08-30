@@ -63,6 +63,9 @@ h4{
     text-align: -webkit-center;
     vertical-align: middle;
 }
+#fileInfoTable{
+    border: 1px solid rgb(51, 167, 181);
+}
 .data-needed > table{
     border-collapse: unset;
     font-size: 14px;
@@ -86,8 +89,9 @@ h4{
     justify-content: center;
 }
 .function-section{
-    display: flex;
+    display: grid;
     padding: 50px 0;
+    text-align-last: center;
     justify-content: center;
 }
 input[type=file]::file-selector-button{
@@ -100,12 +104,43 @@ input[type=file]::file-selector-button{
     color: white;
     content: "";
 }
-.input-class{
-    margin-right: 15px;
+.file-input-button {
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+    border-radius: 5px;
 }
-.input-class::file-selector-button:hover{
-    background-color: rgb(43, 139, 149);
-    filter: drop-shadow(0 0 3px rgb(51,167,181));
+.file-input-button:hover{
+    background-color: white;
+} 
+.file-input-button img {
+    width: 70px; 
+    height: 70px;
+    vertical-align: middle;
+    padding: 10px;
+}
+#upload-section > div.function-section > div:nth-child(1) > button > p{
+    color: rgb(51, 167, 181);
+    font-weight: bolder;
+    padding: 0 5px;
+}
+.file-input-button input[type="file"] {
+    position: absolute;
+    font-size: 100px;
+    right: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer;
+}
+/* Style the button as needed */
+.file-input-button button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
 }
 #input:focus{
     border: none !important;
@@ -117,7 +152,7 @@ input[type=file]::file-selector-button{
     cursor: pointer;
     background-color: rgb(51, 167, 181);
     border-radius: 5px;
-    padding: 15px 25px !important;
+    padding: 10px 18px !important;
     margin: 5px;
     border: 3px solid #ccc;
     color: white;
@@ -320,6 +355,7 @@ body > div.body-section > div.info-section > div.products-by-sku{
     width: fit-content;
     margin: 0 auto;
     max-height: 300px;
+    filter: none;
 }
 /*Extra*/
 body > div.header > div.header-icons > a:active{

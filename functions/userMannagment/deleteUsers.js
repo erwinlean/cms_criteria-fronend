@@ -8,9 +8,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
         displayUsers();
     }, 1000);
-    
-
-// hacer el la captura manual, no con evento
 
     // Event listener for delete button
     document.addEventListener("click", (event) => {
@@ -21,6 +18,15 @@ document.addEventListener("DOMContentLoaded", () => {
             displayAlert(userEmail, (confirmed) => {
                 if (confirmed) {
                     deleteUser(userEmail);
+
+                    Swal.fire({
+                        icon: 'success',
+                        iconColor:"green",
+                        title: 'Usuario Eliminado',
+                        color: "rgb(51, 167, 181)",
+                        confirmButtonColor: "rgb(51, 167, 181)",
+                        text: `El usuario ${userEmail} ha sido eliminado.`,
+                    });
 
                     // Display again the current users accounts
                     displayUsers();

@@ -153,18 +153,6 @@
             <div id="upload-section">
                 <h4 class="general-title">Carga de productos</h4>
 
-                <h4 class="list-title">Tipo de archivo soportado:</h4>
-                    <div class="data-needed">
-                        <table>
-                            <tbody>
-                                <tr>
-                                    <td><img src="./assets/xlsx.png" alt="xlsx icon" title="xlsx"></td>
-                                    <td><img src="./assets/csv.png" alt="csv icon" title="csv"></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-
                     <div class="container_info-section">
                         <div class="info-section">
                             <h4>Guia para carga de productos</h4>
@@ -178,13 +166,17 @@
 
                         <div class="xlsx">
                             <a href="./example.xlsx" download><button>Archivo de ejemplo</button></a>
-                            <a href="./errorExample.xlsx" download><button>Listo para completar</button></a>
+                            <a href="./emply.xlsx" download><button>Listo para completar</button></a>
                         </div>
                     </div>
 
                     <div class="function-section">
                         <div input-section>
-                            <input class="input-class" type="file" id="input" accept=".xlsx, .xls, .csv">
+                            <button class="file-input-button">
+                                <img src="./assets/xlsx.png" alt="xlsx icon" title="xlsx">
+                                <p>Cargar archivo</p>
+                                <input class="input-class" type="file" id="input" accept=".xlsx, .xls, .csv">
+                            </button>                            
                         </div>
                         <div class="btn-section">
                             <button id="btn" class="btn">Enviar archivo</button>
@@ -278,7 +270,7 @@
                             <button id="selecAllProducts">Seleccionar todo</button>
                         </li>
                         <li>
-                            <button id="downloadButton" disabled>Descargar productos seleccionados</button>
+                            <button id="downloadButton" disabled>Descargar productos</button>
                         </li>
                     </ul>
                 </div>

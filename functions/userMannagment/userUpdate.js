@@ -9,7 +9,7 @@ export function setupProfileForm () {
     const url = "https://vast-ruby-elk-kilt.cyclic.app/api";
     // const url = "http://localhost:8080/api";
 
-    const formUpdateUser = document.getElementById('user_information');
+    const formUpdateUser = document.getElementById("user_information");
     let user = userData();
 
     // perfil.html
@@ -17,13 +17,13 @@ export function setupProfileForm () {
         formUpdateUser.elements.name.placeholder = user.name;
         formUpdateUser.elements.apellido.placeholder = user.lastName;
         formUpdateUser.elements.email.placeholder = user.email;
-        formUpdateUser.elements.password.placeholder = 'Ingrese su password actual';
-        formUpdateUser.elements['new-password'].placeholder = 'Ingrese su nuevo password';
-        formUpdateUser.elements['re-enter_new_password'].placeholder = 'Confirme su nuevo password';
+        formUpdateUser.elements.password.placeholder = "Ingrese su password actual";
+        formUpdateUser.elements["new-password"].placeholder = "Ingrese su nuevo password";
+        formUpdateUser.elements["re-enter_new_password"].placeholder = "Confirme su nuevo password";
         formUpdateUser.elements.empresa.placeholder = user.brand;
 
         // Put/Update user information
-        formUpdateUser.addEventListener('submit', async function (event) {
+        formUpdateUser.addEventListener("submit", async function (event) {
             event.preventDefault();
 
             const form = event.target;
@@ -31,12 +31,12 @@ export function setupProfileForm () {
             const lastName = form.elements.apellido.value;
             const email = form.elements.email.value;
             const password = form.elements.password.value;
-            const newPassword = form.elements['new-password'].value;
-            const confirmNewPassword = form.elements['re-enter_new_password'].value;
+            const newPassword = form.elements["new-password"].value;
+            const confirmNewPassword = form.elements["re-enter_new_password"].value;
             const brand = form.elements.empresa.value;
 
             if (newPassword !== confirmNewPassword) {
-                alert('El nuevo password no coincide con la confirmación');
+                alert("El nuevo password no coincide con la confirmación");
                 return;
             };
 
@@ -62,28 +62,28 @@ export function setupProfileForm () {
 
             // Use SweetAlert2 to display a confirmation dialog
             Swal.fire({
-                title: 'Confirmar cambios',
-                text: '¿Seguro que desea actualizar los cambios?',
-                icon: 'question',
+                title: "Confirmar cambios",
+                text: "¿Seguro que desea actualizar los cambios?",
+                icon: "question",
                 iconColor: "rgb(51, 167, 181)",
                 color: "rgb(51, 167, 181)",
                 showCancelButton: true,
-                confirmButtonText: 'Confirmar',
+                confirmButtonText: "Confirmar",
                 confirmButtonColor: "rgb(51, 167, 181)",
-                cancelButtonText: 'Cancelar',
+                cancelButtonText: "Cancelar",
                 cancelButtonColor: "rgb(240,128,104)"
             }).then(async (result) => {
                 if (result.isConfirmed) {
                     try {
-                        const token = localStorage.getItem('token');
-                        const currentUser = JSON.parse(localStorage.getItem('user'));
+                        const token = localStorage.getItem("token");
+                        const currentUser = JSON.parse(localStorage.getItem("user"));
                         const currentUserEmail = currentUser.email;
 
                         const response = await fetch(`${url}/users/update`, {
-                            method: 'PUT',
+                            method: "PUT",
                             headers: {
-                                'Content-Type': 'application/json',
-                                'Authorization': `Bearer ${token}`,
+                                "Content-Type": "application/json",
+                                "Authorization": `Bearer ${token}`,
                                 "User-Email": currentUserEmail
                             },
                             body: JSON.stringify({ ...updatedFields }),
@@ -92,29 +92,27 @@ export function setupProfileForm () {
                             const data = await response.json();
 
                             // Update localStorage with the new information on the DOM
-                            const currentUser = JSON.parse(localStorage.getItem('user'));
+                            const currentUser = JSON.parse(localStorage.getItem("user"));
                             const updatedUser = { ...currentUser, ...data };
 
-                            localStorage.setItem('user', JSON.stringify(updatedUser));
+                            localStorage.setItem("user", JSON.stringify(updatedUser));
 
-                            user = JSON.parse(localStorage.getItem('user'));
+                            user = JSON.parse(localStorage.getItem("user"));
                             formUpdateUser.elements.name.placeholder = user.name;
                             formUpdateUser.elements.apellido.placeholder = user.lastName;
                             formUpdateUser.elements.email.placeholder = user.email;
-                            formUpdateUser.elements.password.placeholder = 'Ingrese su password actual';
-                            formUpdateUser.elements['new-password'].placeholder = 'Ingrese su nuevo password';
-                            formUpdateUser.elements['re-enter_new_password'].placeholder = 'Confirme su nuevo password';
+                            formUpdateUser.elements.password.placeholder = "Ingrese su password actual";
+                            formUpdateUser.elements["new-password"].placeholder = "Ingrese su nuevo password";
+                            formUpdateUser.elements["re-enter_new_password"].placeholder = "Confirme su nuevo password";
                             formUpdateUser.elements.empresa.placeholder = user.brand;
 
-                            Swal.fire('Updated!', 'Your profile has been updated.', 'success');
+                            Swal.fire("Actualizado!", "Tu perfil fue actualizado.", "success");
                         } else {
                             const errorData = await response.json();
-                            console.log(errorData);
-                            Swal.fire('Error', 'An error occurred while updating your profile.', 'error');
+                            Swal.fire("Error", "Error actualizando tu perfil.", "error");
                         };
                     } catch (error) {
-                        console.log(error);
-                        Swal.fire('Error', 'An error occurred while updating your profile.', 'error');
+                        Swal.fire("Error", "Error actualizando tu perfil.", "error");
                     };
                 }
             });

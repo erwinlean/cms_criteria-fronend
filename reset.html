@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Favicon-->
+    <link rel="icon" href="./assets/criteriaIco.ico" type="image/x-icon">
+
+    <!--Alert-->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <title>Password reset</title>
+
+    <link rel="stylesheet" href="./style/normalize.css">
+    <link rel="stylesheet" href="./style/body.css">
+    <link rel="stylesheet" href="./style/login.css">
+    <link rel="stylesheet" href="./style/resetPassword.css">
+    <link rel="stylesheet" href="./style/modal.css">
+</head>
+<body><!-- TO MODIFY STYLE AND FUNCTIONS-->
+    <div class="all"></div>
+        <div class="index">
+            <div id="formulario-login">
+                <div class="form-container">
+                    <form id="login_form">
+                        <label for="contraseña">Contraseña</label>
+                        <input type="text" name="contraseña" id="contraseña" autocomplete="contraseña" placeholder="Ingrese contraseña">
+                        <label for="newContraseña">Confirme contraseña</label>
+                        <input type="text" name="newContraseña" id="newContraseña" autocomplete="contraseña" placeholder="Ingrese contraseña">
+                        
+                        <a class="" href="./index.html">Cancelar</a>
+
+                        <input type="submit" value="Confirmar">
+                    </form>
+                </div>
+            </div>
+        
+            <div class="imagen-index">
+                <img class="logo" src="./assets/isologo-criteria-smart-catalogs.svg" alt="Criteria logo" title="Criteria logo">
+            </div>
+        </div>
+
+    <script type="module" src="./functions/passwordResetMannagment/confirmNewPassword.js"></script>
+</body>
+</html>

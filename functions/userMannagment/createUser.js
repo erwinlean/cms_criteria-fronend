@@ -3,8 +3,7 @@
 import { displayUsers } from "../userMannagment/utils/displayUsers.js"
 
 const registerForm = document.getElementById('register_form');
-const url ="https://vast-ruby-elk-kilt.cyclic.app/api/users/create";
-//const url ="http://localhost:8080/api/users/create";
+const url = "https://vast-ruby-elk-kilt.cyclic.app/api/users/create";
 
 registerForm.addEventListener('submit', function(event) {
     const user = JSON.parse(localStorage.getItem('user'));
@@ -21,12 +20,16 @@ registerForm.addEventListener('submit', function(event) {
     const role = registerForm.elements.role.value;
 
     if (password !== reenterPassword) {
-        alert('Las contraseñas no coinciden');
+        Swal.fire({
+            icon: 'error',
+            title: 'Error',
+            confirmButtonColor: "rgb(51, 167, 181)",
+            text: 'Las contraseñas no coinciden',
+        });
 
         return;
     };
 
-    /* Schema  data from backend match to frontend data form */
     const data = {
         name: name,
         lastName: apellido,
@@ -40,28 +43,33 @@ registerForm.addEventListener('submit', function(event) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            "User-Email": currentUserEmail // Must be email for admin for access the info
+            "User-Email": currentUserEmail
         },
         body: JSON.stringify(data)
     })
     .then(response => response.json())
     .then(data => {
-        //const token = data.token;
-        //const user = data.user;
-        //const tokenExpiration = new Date().getTime() + 2 * 60 * 60 * 1000;
-
-        //localStorage.setItem('token', token);
-        //localStorage.setItem('tokenExpiration', tokenExpiration);
-        //localStorage.setItem('user', JSON.stringify(user));
-        //window.location.href = 'home.html';
-        
         registerForm.reset();
 
-        alert("Usuario " + data.user.email + " creado.")
+        Swal.fire({
+            icon: 'success',
+            iconColor: "green",
+            title: 'Usuario Creado',
+            titleColor:"rgb(51,167,181)",
+            color: "rgb(51,167,181)",
+            confirmButtonColor: "rgb(51, 167, 181)",
+            text: `Usuario ${data.user.email} creado.`,
+        });
 
         displayUsers();
     })
     .catch(err => {
-        console.error(err);
+        Swal.fire({
+            icon: "error",
+            iconColor: "rgb(240,128,104)",
+            title: "Error",
+            text: "Error al crear el usuario verifique los datos y vuelva a intentarlo.",
+            confirmButtonColor: "rgb(51, 167, 181)"
+        });
     });
 });

@@ -129,3 +129,13 @@ body::before {
 #login_form > label:nth-child(1),#login_form > label:nth-child(3){
     margin-left: -10px;
 }
+/*Reset password*/
+#formulario-login > div > a{
+    text-decoration: none;
+    padding: 8px;
+    font-size: 12px;
+    color: white;
+}
+#formulario-login > div > a:hover{
+    color: #ccc;
+}
