@@ -11,14 +11,14 @@ export async function postFile () {
     const userEmail = user.email;
 
     const fileData = {
-        fileName: "test_file",
-        brand: "pepito",
+        fileName: "Test",
+        brand: user.brand,
         data: transformData(products),
         userUpload: userEmail, // Must be email for admin or provider for access the info
     };
 
     try {
-        const response = await fetch("http://localhost:8080/api/files/create"/*"https://vast-ruby-elk-kilt.cyclic.app/api/files/create"*/, {
+        const response = await fetch(/*"http://localhost:8080/api/files/create"*/"https://vast-ruby-elk-kilt.cyclic.app/api/files/create", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

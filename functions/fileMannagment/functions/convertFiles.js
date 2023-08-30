@@ -10,6 +10,8 @@ export const convert_file_to_json = (event) => {
 
     // Clear products
     products = [];
+    // Founded emply rows (error)
+    let emplyRows = [];
 
     //Convert xlsx to json
     if (loadedFile) {
@@ -43,9 +45,10 @@ export const convert_file_to_json = (event) => {
                     } else {
 
                         // Log and discard the row with incomplete data
-                        alert(`Fila ${rowIndex + 1} falta informacion, se encutra vacia, se salteara la fila.`);
+                        emplyRows.push(rowIndex + 1);
+
                         return false;
-                    }
+                    };
                 });
 
                 // Ensure all rows have the same number of properties as the first row
@@ -69,6 +72,17 @@ export const convert_file_to_json = (event) => {
                 });
 
                 products = file_traduced;
+
+                /* Error */
+                if (emplyRows.length > 0) {
+                    Swal.fire({
+                        icon: "error",
+                        iconColor: "rgb(240,128,104)",
+                        title: "Error",
+                        text: `Filas incompletas: ${emplyRows.join(', ')}, no se enviaran filas vacias.`,
+                        confirmButtonColor: "rgb(51, 167, 181)"
+                    });
+                };
 
                 displayProductsTable(products);
             });

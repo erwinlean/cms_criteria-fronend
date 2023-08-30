@@ -1,5 +1,8 @@
 "use strict";
 
+import {emailValidator} from "../userMannagment/utils/validator.js";
+import {displayErrorAlert} from "../userMannagment/utils/displayUsers.js";
+
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.getElementById("login_form");
     const emailInput = document.getElementById("email");
@@ -9,6 +12,11 @@ document.addEventListener("DOMContentLoaded", function() {
 
         // Capture the value of the email
         const email = emailInput.value;
+
+        // Validate the form inputs using the imported formInputValidator function
+        if(!emailValidator(email)){
+            return displayErrorAlert("Email incorrecto.");
+        };
 
         //fetch("/tu/endpoint/de/backend", {
         //    method: "POST",

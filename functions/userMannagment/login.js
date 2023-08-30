@@ -2,7 +2,8 @@
 
 const url = "https://vast-ruby-elk-kilt.cyclic.app/api";
 
-import { displayErrorAlert } from "./utils/displayUsers.js"
+import { displayErrorAlert } from "./utils/displayUsers.js";
+import {emailValidator} from "./utils/validator.js";
 //const url = "http://localhost:8080/api";
 
 const loginForm = document.getElementById('login_form');
@@ -16,6 +17,10 @@ loginForm.addEventListener('submit', async function(event) {
     const data = {
         email: email,
         password: password
+    };
+
+    if(!emailValidator(email)){
+        return displayErrorAlert("Email incorrecto.");
     };
 
     try {

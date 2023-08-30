@@ -108,7 +108,7 @@ export function getProductsInformation() {
 /* Send PDF request to backend that returns the as Data uri */
 /************************************************************/
 async function requestPDF(data) {
-    const url = "http://localhost:8080/api/pdf/create";
+    const url = "https://vast-ruby-elk-kilt.cyclic.app/api/pdf/create";
     const token = localStorage.getItem("token");
 
     try {
