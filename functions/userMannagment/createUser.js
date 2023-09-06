@@ -3,7 +3,7 @@
 import { displayUsers } from "../userMannagment/utils/displayUsers.js"
 
 const registerForm = document.getElementById('register_form');
-const url = "https://vast-ruby-elk-kilt.cyclic.app/api/users/create";
+const url = "https://criteria-providers.onrender.com/api/users/create";
 
 registerForm.addEventListener('submit', function(event) {
     const user = JSON.parse(localStorage.getItem('user'));

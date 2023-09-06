@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function () {
     form.addEventListener("submit", function (event) {
         event.preventDefault();
 
-        const resetRequest = "http://localhost:8080/api/reset/password";
+        const resetRequest = "https://criteria-providers.onrender.com/api/reset/password";
 
         // Capture the value of the email
         const email = emailInput.value;

@@ -18,7 +18,7 @@ export async function postFile () {
     };
 
     try {
-        const response = await fetch(/*"http://localhost:8080/api/files/create"*/"https://vast-ruby-elk-kilt.cyclic.app/api/files/create", {
+        const response = await fetch(/*"http://localhost:8080/api/files/create"*/"https://criteria-providers.onrender.com/api/files/create", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

@@ -4,7 +4,7 @@ import { loginsDisplay, filesDisplay } from "./dataDisplay.js";
 
 const currentUser = JSON.parse(localStorage.getItem("user"));
 
-const url = "https://vast-ruby-elk-kilt.cyclic.app/api";
+const url = "https://criteria-providers.onrender.com/api";
 const token = localStorage.getItem("token");
 
 export const fetchUserFiles = async () => {

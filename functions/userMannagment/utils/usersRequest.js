@@ -3,8 +3,8 @@
 import { fetchUserFiles } from '../../uiMannagment/services/usersData.js';
 import { logOut } from "../../userMannagment/utils/logOut.js";
 
-const getUrl = "https://vast-ruby-elk-kilt.cyclic.app/api/users/users";
-const deleteUrl = "https://vast-ruby-elk-kilt.cyclic.app/api/users/delete";
+const getUrl = "https://criteria-providers.onrender.com/api/users/users";
+const deleteUrl = "https://criteria-providers.onrender.com/api/users/delete";
 
 const user = JSON.parse(localStorage.getItem("user"));
 const token = localStorage.getItem("token");

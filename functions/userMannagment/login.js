@@ -1,6 +1,6 @@
 "use strict";
 
-const url = "https://vast-ruby-elk-kilt.cyclic.app/api";
+const url = "https://criteria-providers.onrender.com/api";
 
 import { displayErrorAlert } from "./utils/displayUsers.js";
 import {emailValidator} from "./utils/validator.js";

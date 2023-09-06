@@ -87,7 +87,7 @@ body::before {
     place-self: center;
     width: fit-content;
 }
-#login_form > input[type=text]:nth-child(2){
+#login_form > input[type=text]:nth-child(2),#login_form > input[type=text]:nth-child(2){
     margin-left: -10px;
 }
 #login_form > input[type=text]:nth-child(2)::placeholder,#login_form > input[type=password]:nth-child(4)::placeholder{

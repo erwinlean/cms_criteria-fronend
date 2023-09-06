@@ -2,6 +2,22 @@
 
 const form = document.getElementById("login_form");
 
+// Check if the current url have the token, if doesnt, return to index
+document.addEventListener("DOMContentLoaded", function () {
+    function getQueryParam(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    };
+
+    const token = getQueryParam("token");
+
+    console.log(token)
+    if (!token) {
+        window.location.href = "./index.html";
+    };
+});
+
+// Change the password for new one function
 async function resetPassword(event) {
     event.preventDefault();
 
@@ -10,8 +26,8 @@ async function resetPassword(event) {
     const password = passwordInput.value;
     const newPassword = newPasswordInput.value;
     const token = getQueryParam("token");
-    const email = getQueryParam("email"); // Get email from query parameters
-    const urlReset = "http://localhost:8080/api/reset/confirm";
+    const email = getQueryParam("email");
+    const urlReset = "https://criteria-providers.onrender.com/api/reset/confirm";
 
     // Make sure the passwords match
     if (password !== newPassword) {
@@ -41,7 +57,8 @@ async function resetPassword(event) {
             },
             body: JSON.stringify(requestBody),
         });
-
+        console.log(requestBody)
+        
         if (response.ok) {
             const data = await response.json();
 

@@ -44,6 +44,8 @@ body > div.header > div > a > img{
 }
 body > div.header > div.header-icons > a > img.perfil{
     padding-bottom: 3px;
+    position: relative;
+    left: -6px;
 }
 body > div.header > div:nth-child(2){
     align-self: center;

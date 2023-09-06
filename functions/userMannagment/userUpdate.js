@@ -6,7 +6,7 @@ import { welcomeUser } from "./utils/userWelcome.js";
 export function setupProfileForm () {
     welcomeUser();
 
-    const url = "https://vast-ruby-elk-kilt.cyclic.app/api";
+    const url = "https://criteria-providers.onrender.com/api";
     // const url = "http://localhost:8080/api";
 
     const formUpdateUser = document.getElementById("user_information");
